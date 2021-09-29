@@ -8,12 +8,12 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - raclette',
-    title: 'raclette',
+    titleTemplate: '%s',
+    title: 'Raclette',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'La raclette (Bratchäs, « fromage rôti », en suisse allemand) est une recette de cuisine traditionnelle et emblématique de la cuisine suisse, connue dans le monde entier. Variante des fondues au fromage, elle consiste à faire fondre du raclette et à le racler au fur et à mesure qu’il fond. Elle est traditionnellement servie avec des pommes de terre en robe des champs et accompagnée de légumes au vinaigre (cornichons, oignons).' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -48,6 +48,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/i18n'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -63,6 +64,19 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss']
+  },
+
+  i18n: {
+    locales: [{
+      code: 'fr',
+      file: 'fr-FR.js'
+    }],
+    defaultLocale: 'fr',
+    lazy: true,
+    langDir: 'lang/',
+    vueI18n: {
+      fallbackLocale: 'fr'
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
