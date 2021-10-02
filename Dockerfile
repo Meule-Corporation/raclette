@@ -1,10 +1,10 @@
-FROM node:16-alpine
+FROM node:16-alpine AS build
 
 WORKDIR /usr/src/app
 COPY . .
 
 RUN npm install && npm run generate
 
-EXPOSE 3000
+FROM nginx:1.21
 
-CMD [ "npm", "run", "start" ]
+COPY --from=build /usr/src/app/dist/ /usr/share/nginx/html
