@@ -79,6 +79,7 @@ export default {
     interval = setInterval(() => {
       this.now = Math.trunc(new Date().getTime() / 1000)
     }, 1000)
+    this.diff = this.date - this.now;
   },
   destroyed() {
     clearInterval(interval)
