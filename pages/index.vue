@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <h1 class="text-h1 text-center mb-12">{{ $t('raclette') }}</h1>
+    <v-col cols="12">
+      <h1 class="text-sm-h1 text-center">{{ $t('raclette') }}</h1>
       <countdown />
     </v-col>
   </v-row>
