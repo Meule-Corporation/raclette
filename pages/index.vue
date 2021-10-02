@@ -12,5 +12,19 @@ import countdown from '@/components/countdown'
 
 export default {
   components: { countdown },
+  jsonld() {
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Quelle quantité de fromage pour une raclette (4 personnes)",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p></p><p>Online purchases may be returned via a major parcel carrier. <a href=http://example.com/returns> Click here </a> to initiate a return.</p>"
+        }
+      }]
+    }
+  }
 }
 </script>
