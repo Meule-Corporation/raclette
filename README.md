@@ -1,5 +1,7 @@
 # raclette
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/e9dea9848b38e7792213/maintainability)](https://codeclimate.com/github/hy0ug0/raclette/maintainability)
+
 ## Build Setup
 
 ```bash
