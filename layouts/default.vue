@@ -1,7 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar prominent floating src="raclette-party.jpg">
-    </v-app-bar>
+    <v-app-bar
+      flat
+      color="white"
+      prominent
+      src="raclette-party.jpg"
+    ></v-app-bar>
     <v-main>
       <v-container class="fill-height">
         <Nuxt />
@@ -21,16 +25,15 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        lang: this.$i18n.locale
+        lang: this.$i18n.locale,
       },
       link: [
         {
           rel: 'canonical',
-          href: 'https://raclette.world' + this.$route.path
-        }
-      ]
+          href: 'https://raclette.world' + this.$route.path,
+        },
+      ],
     }
-  }
-
+  },
 }
 </script>
