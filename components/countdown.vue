@@ -1,18 +1,35 @@
 <template>
   <v-row v-if="diff > 0">
     <v-col align="center">
-      <v-chip dark color="teal" class="ma-2" x-large>
+      <v-chip
+        color="yellow lighten-2"
+        class="ma-2 font-weight-bold custom-chip"
+        x-large
+      >
         {{ twoDigits(days) }} {{ $tc('day', days) }}
       </v-chip>
-      <v-chip dark color="teal" class="ma-2" x-large>
+      <v-chip
+        color="yellow lighten-2"
+        class="ma-2 font-weight-bold custom-chip"
+        x-large
+      >
         {{ twoDigits(hours) }} {{ $tc('hour', hours) }}
       </v-chip>
-      <v-chip dark color="teal" class="ma-2" x-large>
+      <v-chip
+        color="yellow lighten-2"
+        class="ma-2 font-weight-bold custom-chip"
+        x-large
+      >
         {{ twoDigits(minutes) }} {{ $t('minute') }}
       </v-chip>
-      <v-chip dark color="teal" class="ma-2" x-large>
+      <v-chip
+        color="yellow lighten-2"
+        class="ma-2 font-weight-bold custom-chip"
+        x-large
+      >
         {{ twoDigits(seconds) }} {{ $t('second') }}
       </v-chip>
+      <loading-cheese :seconds="seconds"></loading-cheese>
     </v-col>
   </v-row>
 </template>
@@ -76,3 +93,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.custom-chip.v-chip {
+  border: solid 4px;
+  border-color: black !important;
+}
+</style>
