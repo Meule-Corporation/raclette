@@ -1,11 +1,11 @@
 <template>
   <v-footer dark padless>
-    <v-card flat tile class="secondary white--text text-center">
+    <v-card flat tile class="yellow lighten-2 black--text text-center">
       <v-card-text>
         <v-btn
           v-for="(icon, i) in icons"
           :key="i"
-          class="mx-4 white--text"
+          class="mx-4"
           :href="icon.link"
           target="_blank"
           icon
@@ -14,13 +14,13 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
+      <v-card-text class="pt-0 black--text">
         {{ $t('footer.description') }}
       </v-card-text>
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
+      <v-card-text class="black--text">
         {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
