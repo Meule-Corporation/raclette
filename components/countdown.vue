@@ -35,7 +35,7 @@
 </template>
 
 <script>
-const DEADLINE = 'October 12, 2021'
+const DEADLINE = 'October 25, 2021'
 let interval = null
 
 export default {
