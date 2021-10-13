@@ -21,7 +21,7 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+For detailed explanation on how things work, check out the [documentation](https://v3.nuxtjs.org/getting-started/bridge).
 
 ## Special Directories
 
