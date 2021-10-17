@@ -1,5 +1,5 @@
 <template>
-  <v-card :elevation='0' class="card-cheese" rounded="xl" color='yellow lighten-2'>
+  <card-cheese>
     <v-card-title>
       {{ $t('calculator.card.result.title') }}
     </v-card-title>
@@ -23,7 +23,7 @@
         </v-list-item>
       </v-list>
     </v-card-text>
-  </v-card>
+  </card-cheese>
 </template>
 <script>
 export default {
@@ -33,11 +33,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-
-.card-cheese.v-card {
-  border: 4px solid;
-  border-color: black !important;
-  font-weight: bold;
-}
-</style>

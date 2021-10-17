@@ -33,6 +33,10 @@ export default {
     this.interval = setInterval(() => {
       this.seconds++;
     }, 1000);
+    // Triggers a rotaiton instantly
+    setTimeout(() => {
+      this.seconds++;
+    }, 10)
   },
   destroyed() {
     clearInterval(this.interval);
