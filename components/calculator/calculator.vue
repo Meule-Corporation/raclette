@@ -37,16 +37,16 @@
 
         <div class="my-2">
           <button-cheese
-            :disabled="submitButtonDisabled"
-            class="ma-2"
-            @click="submit"
-            >{{ $t('calculator.form.submit') }}</button-cheese
-          >
-          <button-cheese
             :disabled="clearButtonDisabled"
             class="ma-2"
             @click="clear"
             >{{ $t('calculator.form.clear') }}</button-cheese
+          >
+          <button-cheese
+            :disabled="submitButtonDisabled"
+            class="ma-2"
+            @click="submit"
+            >{{ $t('calculator.form.submit') }}</button-cheese
           >
         </div>
       </form>
