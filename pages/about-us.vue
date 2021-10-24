@@ -19,9 +19,11 @@
       </card-cheese>
     </v-col>
   </v-row>
-  <h2 class="text-sm-h2 mb-6 text-center">Nos valeurs</h2>
+    <v-row justify="center" align="center">
+      <h2 class="text-sm-h2 mb-6 text-center">Nos valeurs</h2>
+    </v-row>
   <v-row>
-    <v-col cols="12" sm="4">
+    <v-col cols="12" sm="4" align-self="center">
       <card-cheese>
         <v-img
             class="white--text align-end"
@@ -31,7 +33,7 @@
         </v-img>
       </card-cheese>
     </v-col>
-    <v-col cols="12" sm="4">
+    <v-col cols="12" sm="4" align-self="center">
       <card-cheese>
         <v-img
             class="white--text align-end"
@@ -41,7 +43,7 @@
         </v-img>
       </card-cheese>
     </v-col>
-    <v-col cols="12" sm="4" >
+    <v-col cols="12" sm="4" align-self="center">
       <card-cheese>
         <v-img
             class="white--text align-end"
@@ -52,7 +54,12 @@
       </card-cheese>
     </v-col>
   </v-row>
-  <h2 class="text-sm-h2 mb-6 text-center">Ils utilisent Raclette.World</h2>
+    <v-row justify="center" align="center">
+<!--      <p class="mb-6 text-lg-body-1 text-center font-italic">"72% des français ne connaissent pas les quantités de fromage et de d'accompagnement nécessaires pour la raclette" - Etude réalisée par l'INFEL (Institut National du Fromage et des Etudes Laitières) - 2021   </p>-->
+    </v-row>
+  <v-row justify="center" align="center">
+    <h2 class="text-sm-h2 mb-6 text-center">Ils utilisent Raclette.World</h2>
+  </v-row>
   <v-row>
     <v-col cols="12" sm="4">
       <card-cheese>
@@ -68,29 +75,28 @@
       </card-cheese>
     </v-col>
     <v-col cols="12" sm="4">
-      <card-cheese>
+      <card-cheese min-height="100%">
         <v-img
             class="white--text align-end"
             src="/img/5.jpg"
         >
           <v-card-title>Des gens random</v-card-title>
         </v-img>
-        <v-card-text class="text--primary">
+        <v-card-text class="text--primary" min-height="100%">
           <div><i>« Sous prétexte que nous sommes des gens random de Getty Images, on aurait pas le droit d'utiliser Raclette.World ? »</i></div>
         </v-card-text>
       </card-cheese>
     </v-col>
     <v-col cols="12" sm="4" >
-      <card-cheese>
+      <card-cheese min-height="100%">
         <v-img
             class="white--text align-end"
             src="/img/6.jpg"
         >
           <v-card-title>Jul</v-card-title>
-        </v-card-text>
         </v-img>
         <v-card-text class="text--primary">
-          <div><i>« On m'appel l'OVNI car j'achète toujours pile poile ce qu'il faut pour les raclettes »</i></div>
+          <div><i>« On m'appelle l'OVNI car j'achète toujours pile poile ce qu'il faut pour les raclettes »</i></div>
         </v-card-text>
       </card-cheese>
     </v-col>
