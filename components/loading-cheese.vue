@@ -5,7 +5,7 @@
         :max-height="height"
         :min-height="height"
         :max-width="height"
-        :style="{ transform: 'rotateZ(' + rotation +'deg)'}"
+        :style="{ transform: 'rotateZ(' + -rotation +'deg)'}"
         class="rotating"
         src="cheese-slice.svg"></v-img>
   </div>
@@ -13,16 +13,12 @@
 
 <script>
 export default {
-  name: 'RotatingLogo',
-  props: {
-    seconds: {
-      type: Number,
-      default: 0
-    }
-  },
+  name: 'LoadingCheese',
   data() {
     return {
-      height: 200
+      height: 200,
+      seconds: 0,
+      interval: null
     }
   },
   computed: {
@@ -32,7 +28,19 @@ export default {
     marginTop() {
       return this.height;
     }
-  }
+  },
+  created() {
+    this.interval = setInterval(() => {
+      this.seconds++;
+    }, 1000);
+    // Triggers a rotaiton instantly
+    setTimeout(() => {
+      this.seconds++;
+    }, 10)
+  },
+  destroyed() {
+    clearInterval(this.interval);
+  },
 }
 </script>
 

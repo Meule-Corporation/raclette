@@ -10,7 +10,7 @@
           target="_blank"
           icon
         >
-          <v-icon size="24px">{{ icon.text }}</v-icon>
+          <v-icon size="24px" color="black">{{ icon.text }}</v-icon>
         </v-btn>
       </v-card-text>
 
@@ -21,7 +21,7 @@
       <v-divider></v-divider>
 
       <v-card-text class="black--text">
-        {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
+        <NuxtLink to="mailto:contact@raclette.world">{{ $t('footer.contact-us.link') }}</NuxtLink> - <NuxtLink to="/about-us">{{ $t('footer.about-us.link') }}</NuxtLink> - {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
   </v-footer>

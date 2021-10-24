@@ -29,7 +29,7 @@
       >
         {{ twoDigits(seconds) }} {{ $t('second') }}
       </v-chip>
-      <loading-cheese :seconds="seconds"></loading-cheese>
+      <loading-cheese></loading-cheese>
     </v-col>
   </v-row>
 </template>

@@ -1,11 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar
-      flat
-      color="white"
-      prominent
-      src="raclette-party.jpg"
-    ></v-app-bar>
+    <NuxtLink to="/">
+      <v-app-bar flat color="white" prominent src="raclette-party.jpg" @click="goToHome">
+      </v-app-bar>
+    </NuxtLink>
     <v-main>
       <v-container class="fill-height">
         <Nuxt />
@@ -16,7 +14,7 @@
 </template>
 
 <script>
-import foot from './footer.vue'
+import foot from './footer.vue';
 
 export default {
   components: {
@@ -33,7 +31,18 @@ export default {
           href: 'https://raclette.world' + this.$route.path,
         },
       ],
-    }
+    };
   },
-}
+  methods: {
+    goToHome() {
+
+    }
+  }
+};
 </script>
+
+<style scoped>
+.v-app-bar {
+  max-height: 128px !important;
+}
+</style>
