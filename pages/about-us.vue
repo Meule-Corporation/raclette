@@ -98,10 +98,3 @@
   </v-container>
 </template>
 
-<script>
-import cheeseTitle from '@/components/cheese-title'
-
-export default {
-  components: {cheeseTitle}
-}
-</script>
