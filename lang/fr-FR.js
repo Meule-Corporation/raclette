@@ -38,5 +38,6 @@ export default {
     'SLICE': 'Tranche | Tranches',
     'GRAMS': 'Gramme | Grammes',
     'HALF_GRINDSTONE': 'Demi-meule | Demi-meules',
-    'ITEM': ''
+    'ITEM': '',
+    'calculator.form.isUserVege': "J'aime la raclette mais je suis végétarien"
 }

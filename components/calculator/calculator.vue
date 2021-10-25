@@ -20,17 +20,24 @@
 
         <h2>{{ $t('what-eat') }}</h2>
 
+        <div class='d-flex justify-center'>
+          <v-switch
+            v-model="isUserVege"
+            :label="$t('calculator.form.isUserVege')"
+            color="yellow lighter-2"
+          ></v-switch>
+        </div>
+
         <h3 class="mt-2">{{ $t('what-eat.base') }}</h3>
         <foodSelector
-          :available-foods="foodItems"
+          :available-foods="filterFood('base')"
           :selected-foods="formData.food"
           @food-clicked="(value) => clickItem('food', value)"
         />
 
-
         <h3 class="mt-2">{{ $t('what-eat.extra') }}</h3>
         <foodSelector
-          :available-foods="extraItems"
+          :available-foods="filterFood('extra')"
           :selected-foods="formData.extra"
           @food-clicked="(value) => clickItem('extra', value)"
         />
@@ -52,15 +59,15 @@
       </form>
       <div v-else-if="state === statesEnum.LOADING_RESULTS">
         <loading-cheese></loading-cheese>
-        {{ $t('calculator.loading')}}
+        {{ $t('calculator.loading') }}
       </div>
-      <div v-if='state === statesEnum.DISPLAY_RESULTS'>
-        <calculation-results class="mb-8" :results='results' />
+      <div v-if="state === statesEnum.DISPLAY_RESULTS">
+        <calculation-results class="mb-8" :results="results" />
         <button-cheese
           :disabled="clearButtonDisabled"
           class="ma-2"
           @click="clear"
-        >{{ $t('calculator.form.restart') }}</button-cheese
+          >{{ $t('calculator.form.restart') }}</button-cheese
         >
       </div>
     </v-col>
@@ -69,21 +76,28 @@
 
 <script>
 import buttonCheese from '../button-cheese';
-import loadingCheese from "../loading-cheese";
+import loadingCheese from '../loading-cheese';
 import numberOfPeoplePicker from './numberOfPeoplePicker.vue';
 import { units, states, food } from './calculator.const';
 import foodSelector from './foodSelector';
-import CalculationResults from "@/components/calculator/calculation-results";
+import CalculationResults from '@/components/calculator/calculation-results';
 
 export default {
-  components: {CalculationResults, loadingCheese, buttonCheese, numberOfPeoplePicker, foodSelector },
+  components: {
+    CalculationResults,
+    loadingCheese,
+    buttonCheese,
+    numberOfPeoplePicker,
+    foodSelector,
+  },
   data() {
     return {
+      isUserVege: false,
       formData: this.getInitalFormData(),
       // One of INITIAL, LOADING_RESULTS, DISPLAY_RESULTS
       state: states.INITIAL,
       statesEnum: states,
-      results: []
+      results: [],
     };
   },
   computed: {
@@ -100,14 +114,16 @@ export default {
         JSON.stringify(this.getInitalFormData())
       );
     },
-    foodItems() {
-      return food.filter(food => food.type === 'default')
-    },
-    extraItems() {
-      return food.filter(food => food.type === 'extra')
-    }
   },
   methods: {
+    filterFood(foodType) {
+      return food.filter((food) => {
+        if (this.isUserVege) {
+          return food.type === foodType && food.isVegeFriendly === this.isUserVege;
+        }
+        return food.type === foodType;
+      })
+    },
     getInitalFormData() {
       return {
         numberOfAdults: 0,
