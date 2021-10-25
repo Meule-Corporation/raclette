@@ -71,7 +71,7 @@
 import buttonCheese from '../button-cheese';
 import loadingCheese from "../loading-cheese";
 import numberOfPeoplePicker from './numberOfPeoplePicker.vue';
-import calculatorConst from './calculator.const';
+import { units, states, food } from './calculator.const';
 import foodSelector from './foodSelector';
 import CalculationResults from "@/components/calculator/calculation-results";
 
@@ -80,23 +80,9 @@ export default {
   data() {
     return {
       formData: this.getInitalFormData(),
-      foodItems: [
-        { id: 'jambon-blanc', portions: 1, unit: calculatorConst.units.SLICE },
-        { id: 'bacon', portions: 4, unit: calculatorConst.units.SLICE },
-        { id: 'chorizo', portions: 4, unit: calculatorConst.units.SLICE },
-        { id: 'coppa', portions: 3, unit: calculatorConst.units.SLICE },
-        { id: 'jambon-cru', portions: 1, unit: calculatorConst.units.SLICE },
-        { id: 'rosette', portions: 3, unit: calculatorConst.units.SLICE },
-        { id: 'patate', portions: 280, unit: calculatorConst.units.GRAMS },
-      ],
-      extraItems: [
-        { id: 'cornichon', portions: 5, unit: calculatorConst.units.ITEM },
-        { id: 'oignon-rouge', portions: 0.5, unit: calculatorConst.units.ITEM },
-        { id: 'mushrooms', portions: 1.2, unit: calculatorConst.units.ITEM },
-      ],
       // One of INITIAL, LOADING_RESULTS, DISPLAY_RESULTS
-      state: calculatorConst.states.INITIAL,
-      statesEnum: calculatorConst.states,
+      state: states.INITIAL,
+      statesEnum: states,
       results: []
     };
   },
@@ -114,6 +100,12 @@ export default {
         JSON.stringify(this.getInitalFormData())
       );
     },
+    foodItems() {
+      return food.filter(food => food.type === 'default')
+    },
+    extraItems() {
+      return food.filter(food => food.type === 'extra')
+    }
   },
   methods: {
     getInitalFormData() {
@@ -125,7 +117,7 @@ export default {
       };
     },
     submit() {
-      this.state = calculatorConst.states.LOADING_RESULTS;
+      this.state = states.LOADING_RESULTS;
       const CHEESE_PORTIONS = 215;
       const quantity =
         this.formData.numberOfAdults + this.formData.numberOfChildren / 2;
@@ -142,24 +134,18 @@ export default {
           id: 'raclette-cheese',
           portions: CHEESE_PORTIONS,
           quantity: quantity * CHEESE_PORTIONS,
-          unit: calculatorConst.units.GRAMS,
+          unit: units.GRAMS,
         },
-        // {
-        //   id: 'raclette-cheese',
-        //   portions: CHEESE_PORTIONS,
-        //   quantity: (quantity * CHEESE_PORTIONS) / 3000 + 1,
-        //   unit: calculatorConst.units.HALF_GRINDSTONE,
-        // },
       ];
       // In ms
       const LOADING_TIME = 5000;
       setTimeout(() => {
-        this.state = calculatorConst.states.DISPLAY_RESULTS;
+        this.state = states.DISPLAY_RESULTS;
       }, LOADING_TIME);
     },
     clear() {
       this.formData = this.getInitalFormData();
-      this.state = calculatorConst.states.INITIAL;
+      this.state = states.INITIAL;
     },
     updateForm(formProperty, value) {
       this.formData[formProperty] = value;
