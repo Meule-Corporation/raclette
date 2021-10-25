@@ -14,11 +14,11 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
-    title: 'Raclette',
+    title: 'Raclette.World',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: "raclette.world est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
+      {hid: 'description', name: 'description', content: "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qZantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
       {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [
