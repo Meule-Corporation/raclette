@@ -4,9 +4,6 @@
       <cheese-title></cheese-title>
       <calculator />
     </v-col>
-    <div>
-      <a href="/about-us">En savoir plus sur Raclette.World</a>
-    </div>
   </v-row>
 </template>
 
