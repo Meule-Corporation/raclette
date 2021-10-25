@@ -22,6 +22,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-card-actions>Pour en savoir plus sur les personnes brillantes derrière ce projet révolutionnaire, c'est par &nbsp;<NuxtLink to="/about-us">ici</NuxtLink></v-card-actions>
     </v-card-text>
   </card-cheese>
 </template>
