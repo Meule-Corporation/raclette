@@ -21,7 +21,7 @@
       <v-divider></v-divider>
 
       <v-card-text class="black--text">
-        <NuxtLink to="mailto:contact@raclette.world">{{ $t('footer.contact-us.link') }}</NuxtLink> - <NuxtLink to="/about-us">{{ $t('footer.about-us.link') }}</NuxtLink> - {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
+        <a href="mailto:contact@raclette.world">{{ $t('footer.contact-us.link') }}</a> - <NuxtLink to="/about-us">{{ $t('footer.about-us.link') }}</NuxtLink> - {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
   </v-footer>
