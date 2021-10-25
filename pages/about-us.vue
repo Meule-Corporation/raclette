@@ -19,9 +19,9 @@
       </card-cheese>
     </v-col>
   </v-row>
-    <v-row justify="center" align="center">
-      <h2 class="text-sm-h2 mb-6 text-center">Nos valeurs</h2>
-    </v-row>
+  <v-row justify="center" align="center" class="mt-16">
+    <h2 class="text-sm-h2 mb-6 text-center">Nos valeurs</h2>
+  </v-row>
   <v-row>
     <v-col cols="12" sm="4" align-self="center">
       <card-cheese>
@@ -54,10 +54,16 @@
       </card-cheese>
     </v-col>
   </v-row>
-    <v-row justify="center" align="center">
-<!--      <p class="mb-6 text-lg-body-1 text-center font-italic">"72% des français ne connaissent pas les quantités de fromage et de d'accompagnement nécessaires pour la raclette" - Etude réalisée par l'INFEL (Institut National du Fromage et des Etudes Laitières) - 2021   </p>-->
-    </v-row>
-  <v-row justify="center" align="center">
+  <v-row justify="center" align="center" class="mt-16">
+    <card-cheese min-height="100%" min-width="100%">
+      <v-card-title  class="justify-center">Ils parlent de nous</v-card-title>
+      <v-card-text class="text--primary" min-height="100%">
+        <div>      <p class="mb-6 text-lg-body-1 text-center font-italic">"72% des français ne connaissent pas les quantités de fromage et de d'accompagnement nécessaires pour la raclette" - Etude réalisée par l'INFEL (Institut National du Fromage et des Etudes Laitières) - 2021   </p>
+        </div>
+      </v-card-text>
+    </card-cheese>
+  </v-row>
+  <v-row justify="center" align="center" class="mt-16">
     <h2 class="text-sm-h2 mb-6 text-center">Ils utilisent Raclette.World</h2>
   </v-row>
   <v-row>
