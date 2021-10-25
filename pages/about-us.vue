@@ -58,7 +58,7 @@
     <card-cheese min-height="100%" min-width="100%">
       <v-card-title  class="justify-center">Ils parlent de nous</v-card-title>
       <v-card-text class="text--primary" min-height="100%">
-        <div>      <p class="mb-6 text-lg-body-1 text-center font-italic">"72% des français ne connaissent pas les quantités de fromage et de d'accompagnement nécessaires pour la raclette" - Etude réalisée par l'INFEL (Institut National du Fromage et des Etudes Laitières) - 2021   </p>
+        <div>      <p class="mb-6 text-lg-body-1 text-center font-italic">"72% des français ne connaissent pas les quantités de fromage et d'accompagnement nécessaires pour la raclette" - Etude réalisée par l'INFEL (Institut National du Fromage et des Etudes Laitières) - 2021   </p>
         </div>
       </v-card-text>
     </card-cheese>
