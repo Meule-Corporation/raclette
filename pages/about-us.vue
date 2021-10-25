@@ -96,7 +96,7 @@
           <v-card-title>Jul</v-card-title>
         </v-img>
         <v-card-text class="text--primary">
-          <div><i>« On m'appelle l'OVNI car j'achète toujours pile poile ce qu'il faut pour les raclettes »</i></div>
+          <div><i>« On m'appelle l'OVNI car j'achète toujours pile poil ce qu'il faut pour les raclettes »</i></div>
         </v-card-text>
       </card-cheese>
     </v-col>
