@@ -17,6 +17,11 @@
             (updatedCount) => updateForm('numberOfChildren', updatedCount)
           "
         />
+        <capacity-slider
+          @capacity-updated="
+            (updatedCapacity) => updateForm('capacity', updatedCapacity)
+          "
+        />
 
         <h2 class="mt-5">{{ $t('what-eat') }}</h2>
 
@@ -76,15 +81,17 @@
 </template>
 
 <script>
-import buttonCheese from '../button-cheese';
-import loadingCheese from '../loading-cheese';
-import numberOfPeoplePicker from './numberOfPeoplePicker.vue';
-import { units, states, food } from './calculator.const';
-import foodSelector from './foodSelector';
+import buttonCheese from '@/components/button-cheese';
+import loadingCheese from '@/components/loading-cheese';
+import numberOfPeoplePicker from '@/components/calculator/numberOfPeoplePicker.vue';
+import foodSelector from '@/components/calculator/foodSelector';
+import { units, states, food, LOADING_TIME, CHEESE_PORTIONS } from '@/components/calculator/calculator.const';
 import CalculationResults from '@/components/calculator/calculation-results';
+import CapacitySlider from '@/components/calculator/capacity-slider';
 
 export default {
   components: {
+    CapacitySlider,
     CalculationResults,
     loadingCheese,
     buttonCheese,
@@ -131,6 +138,7 @@ export default {
         numberOfChildren: 0,
         extra: [],
         food: [],
+        capacity: 1,
       };
     },
     removeVegeSelectedItems() {
@@ -142,27 +150,30 @@ export default {
     },
     submit() {
       this.state = states.LOADING_RESULTS;
-      const CHEESE_PORTIONS = 215;
-      const quantity =
-        this.formData.numberOfAdults + this.formData.numberOfChildren / 2;
+
+      const { numberOfAdults, numberOfChildren, food, extra, capacity } =
+        this.formData;
+      const quantity = numberOfAdults + numberOfChildren / 2;
+
+      // Do the maths
       this.results = [
-        ...this.formData.food.map((aliment) => ({
+        ...food.map((aliment) => ({
           ...aliment,
-          quantity: aliment.portions * quantity,
+          quantity: aliment.portions * quantity * capacity,
         })),
-        ...this.formData.extra.map((aliment) => ({
+        ...extra.map((aliment) => ({
           ...aliment,
-          quantity: aliment.portions * quantity,
+          quantity: aliment.portions * quantity * capacity,
         })),
         {
           id: 'raclette-cheese',
           portions: CHEESE_PORTIONS,
-          quantity: quantity * CHEESE_PORTIONS,
+          quantity: quantity * capacity * CHEESE_PORTIONS,
           unit: units.GRAMS,
         },
       ];
-      // In ms
-      const LOADING_TIME = 5000;
+
+      // Wait and display the result
       setTimeout(() => {
         this.state = states.DISPLAY_RESULTS;
       }, LOADING_TIME);

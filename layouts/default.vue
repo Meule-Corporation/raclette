@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import foot from './footer.vue';
+import foot from '@/layouts/footer.vue';
 
 export default {
   components: {

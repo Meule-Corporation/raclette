@@ -11,6 +11,11 @@ export const states = {
   DISPLAY_RESULTS: 'DISPLAY_RESULTS',
 };
 
+// In ms
+export const LOADING_TIME = 5000;
+// In grams
+export const CHEESE_PORTIONS = 215;
+
 /**
  * type: soit un aliment de base "base" ou un petit extra qui fait plaisir "extra"
  * id: identifiant de l'ingrédient qui doit correspondre à sa clé pour la traduction dans le fichier JSON
