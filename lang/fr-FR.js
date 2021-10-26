@@ -1,5 +1,5 @@
 export default {
-    raclette: 'RACLETTE.WORLD',
+    'raclette': 'RACLETTE.WORLD',
     'raclette.tonight': 'Raclette ce soir ?',
     'footer.description': "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre.",
     'day': 'jour | jours',
@@ -40,5 +40,9 @@ export default {
     'GRAMS': 'Gramme | Grammes',
     'HALF_GRINDSTONE': 'Demi-meule | Demi-meules',
     'ITEM': '',
-    'calculator.form.isUserVege': "J'aime la raclette mais je suis végétarien"
+    'calculator.form.isUserVege': "J'aime la raclette mais je suis végétarien",
+    'capacity-slider.title': 'Niveau appétit ça se passe comment ?',
+    'capacity-slider.label.bird': 'Oiseau',
+    'capacity-slider.label.normal': 'Normal',
+    'capacity-slider.label.huge': 'Gros daleu',
 }
