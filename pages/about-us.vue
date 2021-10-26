@@ -14,7 +14,7 @@
         </v-img>
         <v-card-text class="text--primary">
           <div>Ce pari fou que se sont lancés les 3 co-fondateurs de Raclette.World : mettre l'intelligence artificielle au service de la raclette.</div>
-          <div>Fruit de centaines d'heures de recherche et développement, les trois co-fondateurs ont mis au point une technologie d'IA post-quantique basée sur la blockchain dans le metaverse. Cette technologie enviée par de nombreuses entreprises de la Silicon Valley rends enfin accessible au plus grand nombre un calculateur de raclette d'une efficacité sans pareil.</div>
+          <div>Fruit de centaines d'heures de recherche et développement, les trois co-fondateurs ont mis au point une technologie d'IA post-quantique basée sur la blockchain dans le metaverse. Cette technologie enviée par de nombreuses entreprises de la Silicon Valley rend enfin accessible au plus grand nombre un calculateur de raclette d'une efficacité sans pareil.</div>
         </v-card-text>
       </card-cheese>
     </v-col>
