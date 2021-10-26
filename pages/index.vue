@@ -12,6 +12,7 @@ import colors from 'vuetify/lib/util/colors'
 import calculator from '@/components/calculator/calculator'
 
 export default {
+  name: 'Index',
   components: { calculator },
   mounted() {
     console.log("%c \n" +

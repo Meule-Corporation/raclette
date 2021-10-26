@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col align="center" cols="10" offset="1">
+    <v-col align="center" cols="12" offset="0" sm='10' offset-sm='1'>
       <form v-if="state === statesEnum.INITIAL">
         <h2>{{ $t('who-eat') }}</h2>
         <numberOfPeoplePicker
