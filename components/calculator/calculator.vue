@@ -18,7 +18,7 @@
           "
         />
 
-        <h2>{{ $t('what-eat') }}</h2>
+        <h2 class="mt-5">{{ $t('what-eat') }}</h2>
 
         <div class='d-flex justify-center'>
           <v-switch

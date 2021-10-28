@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <NuxtLink to="/">
-      <v-app-bar flat color="white" prominent src="raclette-party.jpg" @click="goToHome">
+      <v-app-bar flat color="white" prominent src="/raclette-party.jpg" @click="goToHome">
       </v-app-bar>
     </NuxtLink>
     <v-main>
