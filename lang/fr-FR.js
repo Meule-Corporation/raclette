@@ -42,7 +42,4 @@ export default {
     'ITEM': '',
     'calculator.form.isUserVege': "J'aime la raclette mais je suis végétarien",
     'capacity-slider.title': 'Niveau appétit ça se passe comment ?',
-    'capacity-slider.label.bird': 'Oiseau',
-    'capacity-slider.label.normal': 'Normal',
-    'capacity-slider.label.huge': 'Gros daleu',
 }
