@@ -17,11 +17,6 @@
             (updatedCount) => updateForm('numberOfChildren', updatedCount)
           "
         />
-        <capacity-slider
-          @capacity-updated="
-            (updatedCapacity) => updateForm('capacity', updatedCapacity)
-          "
-        />
 
         <h2 class="mt-5">{{ $t('what-eat') }}</h2>
 
@@ -68,6 +63,11 @@
         {{ $t('calculator.loading') }}
       </div>
       <div v-if="state === statesEnum.DISPLAY_RESULTS">
+        <capacity-slider
+          @capacity-updated="
+            (updatedCapacity) => updateForm('capacity', updatedCapacity)
+          "
+        />
         <calculation-results class="mb-8" :results="results" />
         <button-cheese
           :disabled="clearButtonDisabled"
@@ -105,7 +105,6 @@ export default {
       // One of INITIAL, LOADING_RESULTS, DISPLAY_RESULTS
       state: states.INITIAL,
       statesEnum: states,
-      results: [],
     };
   },
   computed: {
@@ -122,6 +121,28 @@ export default {
         JSON.stringify(this.getInitalFormData())
       );
     },
+    results() {
+      const { numberOfAdults, numberOfChildren, food, extra, capacity } =
+        this.formData;
+      const quantity = numberOfAdults + numberOfChildren / 2;
+
+      return [
+        ...food.map((aliment) => ({
+          ...aliment,
+          quantity: aliment.portions * quantity * capacity,
+        })),
+        ...extra.map((aliment) => ({
+          ...aliment,
+          quantity: aliment.portions * quantity * capacity,
+        })),
+        {
+          id: 'raclette-cheese',
+          portions: CHEESE_PORTIONS,
+          quantity: quantity * capacity * CHEESE_PORTIONS,
+          unit: units.GRAMS,
+        },
+      ]
+    }
   },
   methods: {
     filterFood(foodType) {
@@ -150,28 +171,6 @@ export default {
     },
     submit() {
       this.state = states.LOADING_RESULTS;
-
-      const { numberOfAdults, numberOfChildren, food, extra, capacity } =
-        this.formData;
-      const quantity = numberOfAdults + numberOfChildren / 2;
-
-      // Do the maths
-      this.results = [
-        ...food.map((aliment) => ({
-          ...aliment,
-          quantity: aliment.portions * quantity * capacity,
-        })),
-        ...extra.map((aliment) => ({
-          ...aliment,
-          quantity: aliment.portions * quantity * capacity,
-        })),
-        {
-          id: 'raclette-cheese',
-          portions: CHEESE_PORTIONS,
-          quantity: quantity * capacity * CHEESE_PORTIONS,
-          unit: units.GRAMS,
-        },
-      ];
 
       // Wait and display the result
       setTimeout(() => {

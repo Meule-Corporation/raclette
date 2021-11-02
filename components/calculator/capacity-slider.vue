@@ -5,20 +5,24 @@
       <v-slider
         v-model="hungriness"
         color="grey darken-2"
-        thumb-color="yellow lighter-2"
         track-color="yellow lighter-2"
-        :tick-labels="hungrinessLabels"
+        height='32'
         :min="0.75"
         :max="1.25"
-        :step="0.25"
-        ticks="always"
-        tick-size="3"
-        :thumb-size="32"
-        thumb-label="always"
-        @change="$emit('capacity-updated', hungriness)"
+        :step="0.05"
+        @input="$emit('capacity-updated', hungriness)"
       >
-        <template #thumb-label="{ value }">
-          {{ satisfactionEmojis[value] }}
+        <template #prepend>
+          <v-img
+            max-width="50"
+            src='img/moineau.png'
+          />
+        </template>
+        <template #append>
+          <v-img
+              max-width="50"
+            src='img/loup.png'
+          />
         </template>
       </v-slider>
     </v-row>
@@ -31,12 +35,6 @@ export default {
   data() {
     return {
       hungriness: 1,
-      hungrinessLabels: [
-        this.$t('capacity-slider.label.bird'),
-        this.$t('capacity-slider.label.normal'),
-        this.$t('capacity-slider.label.huge'),
-      ],
-      satisfactionEmojis: { 0.75: '😭', 1: '🙂', 1.25: '😍' },
     };
   },
 };
