@@ -1,7 +1,7 @@
 <template>
   <v-col>
     <h2>{{ $t('capacity-slider.title') }}</h2>
-    <v-row class="mt-12 justify-center flex-nowrap">
+    <v-row class="my-4 justify-center flex-nowrap">
       <v-slider
         v-model="hungriness"
         color="grey darken-2"
@@ -9,7 +9,7 @@
         height='32'
         :min="0.75"
         :max="1.25"
-        :step="0.05"
+        :step="0.01"
         @input="$emit('capacity-updated', hungriness)"
       >
         <template #prepend>
@@ -39,3 +39,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+>>>.v-slider__thumb {
+  height: 20px;
+  width: 20px;
+}
+
+>>> .v-slider--horizontal .v-slider__track-container {
+  height: 10px;
+}
+
+>>> .v-slider__thumb::before {
+  left: -9px;
+  top: -9px;
+}
+</style>
