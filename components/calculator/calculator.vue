@@ -25,6 +25,7 @@
             v-model="isUserVege"
             :label="$t('calculator.form.isUserVege')"
             color="yellow lighter-2"
+            @change='removeVegeSelectedItems'
           ></v-switch>
         </div>
 
@@ -130,6 +131,13 @@ export default {
         numberOfChildren: 0,
         extra: [],
         food: [],
+      };
+    },
+    removeVegeSelectedItems() {
+      this.formData = {
+        ...this.formData,
+        extra: this.formData.extra.filter((food) => food.isVegeFriendly === this.isUserVege),
+        food: this.formData.food.filter((food) => food.isVegeFriendly === this.isUserVege),
       };
     },
     submit() {
