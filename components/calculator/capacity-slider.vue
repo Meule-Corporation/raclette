@@ -10,6 +10,7 @@
         :min="0.75"
         :max="1.25"
         :step="0.01"
+        hide-details
         @input="$emit('capacity-updated', hungriness)"
       >
         <template #prepend>
@@ -53,5 +54,9 @@ export default {
 >>> .v-slider__thumb::before {
   left: -9px;
   top: -9px;
+}
+
+.v-input {
+  align-items: center;
 }
 </style>
