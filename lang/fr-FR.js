@@ -34,7 +34,6 @@ export default {
     'calculator.card.result.title': 'Votre liste de course',
     'footer.about-us.link': 'À propos',
     'footer.contact-us.link': 'Nous contacter',
-    'calculator.loading': 'Calcul post-quantique des quantités en cours...',
     'calculator.form.restart': 'Recommencer',
     'SLICE': 'Tranche | Tranches',
     'GRAMS': 'Gramme | Grammes',

@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col align="center" cols="12" offset="0" sm='10' offset-sm='1'>
+    <v-col align="center" cols="12" offset="0" sm='10' offset-sm='1' lg='8' offset-lg='2'>
       <form v-if="state === statesEnum.INITIAL">
         <h2>{{ $t('who-eat') }}</h2>
         <numberOfPeoplePicker
@@ -60,7 +60,6 @@
       </form>
       <div v-else-if="state === statesEnum.LOADING_RESULTS">
         <loading-cheese></loading-cheese>
-        {{ $t('calculator.loading') }}
       </div>
       <div v-if="state === statesEnum.DISPLAY_RESULTS">
         <capacity-slider
