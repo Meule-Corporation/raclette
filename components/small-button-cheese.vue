@@ -1,18 +1,18 @@
 <template>
-  <v-btn class="button-cheese" x-large rounded color="yellow lighten-2" v-bind="$attrs" v-on="$listeners">
+  <v-btn class="button-cheese" x-small rounded color="yellow lighten-2" v-bind="$attrs" v-on="$listeners">
     <slot />
   </v-btn>
 </template>
 
 <script>
 export default {
-  name: "ButtonCheese"
+  name: "SmallButtonCheese"
 }
 </script>
 
 <style scoped>
 .button-cheese.v-btn {
-  border: 4px solid;
+  border: 2px solid;
   border-color: black !important;
   font-weight: bold;
 }

@@ -40,5 +40,8 @@ export default {
     'HALF_GRINDSTONE': 'Demi-meule | Demi-meules',
     'ITEM': '',
     'calculator.form.isUserVege': "J'aime la raclette mais je suis végétarien",
-    'capacity-slider.title': 'Niveau appétit ça se passe comment ?',
+  'cookie.message': 'Nous n\'avons pas de cookie ici, uniquement de la raclette',
+  'cookie.accept': 'Fais péter les cornichons',
+  'cookie.refuse': 'Je veux vraiment des cookies',
+  'capacity-slider.title': 'Niveau appétit ça se passe comment ?',
 }

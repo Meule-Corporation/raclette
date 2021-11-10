@@ -8,7 +8,9 @@
       <v-container class="fill-height">
         <Nuxt />
       </v-container>
+      <cookie-consent></cookie-consent>
     </v-main>
+
     <foot />
   </v-app>
 </template>
