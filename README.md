@@ -1,5 +1,9 @@
 # raclette
 
+## Requirements
+
+Use `nvm use` to have the good Node.js version
+
 ## Build Setup
 
 ```bash
