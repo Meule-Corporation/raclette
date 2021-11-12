@@ -1,6 +1,14 @@
 <template>
   <v-row>
-    <v-col align="center" cols="12" offset="0" sm='10' offset-sm='1' lg='8' offset-lg='2'>
+    <v-col
+      align="center"
+      cols="12"
+      offset="0"
+      sm="10"
+      offset-sm="1"
+      lg="8"
+      offset-lg="2"
+    >
       <form v-if="state === statesEnum.INITIAL">
         <h2>{{ $t('who-eat') }}</h2>
         <NumberOfPeoplePicker
@@ -20,12 +28,12 @@
 
         <h2 class="mt-5">{{ $t('what-eat') }}</h2>
 
-        <div class='d-flex justify-center'>
+        <div class="d-flex justify-center">
           <v-switch
             v-model="isUserVege"
             :label="$t('calculator.form.isUserVege')"
             color="yellow lighter-2"
-            @change='removeVegeSelectedItems'
+            @change="removeVegeSelectedItems"
           ></v-switch>
         </div>
 
@@ -91,8 +99,13 @@ import CapacitySlider from '@/components/calculator/CapacitySlider';
 
 // Helpers
 import { useStorage } from '@vueuse/core';
-import { units, states, food, LOADING_TIME, CHEESE_PORTIONS } from '@/components/calculator/calculator.const';
+import {
+  states,
+  food,
+  LOADING_TIME,
+} from '@/components/calculator/calculator.const';
 import { getLoadingTimes } from '@/components/calculator/calculator.methods';
+import { calculateResults } from '@/components/calculator/calculator.computed';
 
 export default {
   name: 'Calculator',
@@ -129,27 +142,8 @@ export default {
       );
     },
     results() {
-      const { numberOfAdults, numberOfChildren, food, extra, capacity } =
-        this.formData;
-      const quantity = numberOfAdults + numberOfChildren / 2;
-
-      return [
-        ...food.map((aliment) => ({
-          ...aliment,
-          quantity: aliment.portions * quantity * capacity,
-        })),
-        ...extra.map((aliment) => ({
-          ...aliment,
-          quantity: aliment.portions * quantity * capacity,
-        })),
-        {
-          id: 'raclette-cheese',
-          portions: CHEESE_PORTIONS,
-          quantity: quantity * capacity * CHEESE_PORTIONS,
-          unit: units.GRAMS,
-        },
-      ]
-    }
+      return calculateResults(this.formData);
+    },
   },
   created() {
     // Get the usage count from local storage
@@ -159,10 +153,12 @@ export default {
     filterFood(foodType) {
       return food.filter((food) => {
         if (this.isUserVege) {
-          return food.type === foodType && food.isVegeFriendly === this.isUserVege;
+          return (
+            food.type === foodType && food.isVegeFriendly === this.isUserVege
+          );
         }
         return food.type === foodType;
-      })
+      });
     },
     getInitalFormData() {
       return {
@@ -176,8 +172,12 @@ export default {
     removeVegeSelectedItems() {
       this.formData = {
         ...this.formData,
-        extra: this.formData.extra.filter((food) => food.isVegeFriendly === this.isUserVege),
-        food: this.formData.food.filter((food) => food.isVegeFriendly === this.isUserVege),
+        extra: this.formData.extra.filter(
+          (food) => food.isVegeFriendly === this.isUserVege
+        ),
+        food: this.formData.food.filter(
+          (food) => food.isVegeFriendly === this.isUserVege
+        ),
       };
     },
     submit() {
