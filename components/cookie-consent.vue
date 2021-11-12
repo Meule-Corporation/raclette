@@ -23,21 +23,23 @@
 
       <v-row no-gutters>
         <v-col>
-          <small-button-cheese
+          <button-cheese
+            size="x-small"
             class="ma-2"
             @click="leave"
           >
             {{ $t('cookie.refuse') }}
-          </small-button-cheese>
+          </button-cheese>
         </v-col>
         <v-col>
 
-          <small-button-cheese
+          <button-cheese
+            size="x-small"
             class="ma-2"
             @click="dismiss"
           >
             {{ $t('cookie.accept') }}
-          </small-button-cheese>
+          </button-cheese>
         </v-col>
       </v-row>
 
@@ -110,7 +112,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0
 }
 
