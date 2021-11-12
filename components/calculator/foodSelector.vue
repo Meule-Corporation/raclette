@@ -54,6 +54,7 @@ export default {
 
 .v-chip {
   border-width: 4px !important;
+  border-style: solid;
 }
 
 .v-chip__content {
