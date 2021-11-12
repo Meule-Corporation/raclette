@@ -30,6 +30,7 @@ export const food = [
     portions: 1,
     unit: units.SLICE,
     isVegeFriendly: false,
+    kcal: 120,
   },
   {
     type: 'base',
@@ -37,6 +38,7 @@ export const food = [
     portions: 4,
     unit: units.SLICE,
     isVegeFriendly: false,
+    kcal: 50,
   },
   {
     type: 'base',
@@ -44,6 +46,7 @@ export const food = [
     portions: 4,
     unit: units.SLICE,
     isVegeFriendly: false,
+    kcal: 50,
   },
   {
     type: 'base',
@@ -51,6 +54,7 @@ export const food = [
     portions: 3,
     unit: units.SLICE,
     isVegeFriendly: false,
+    kcal: 50,
   },
   {
     type: 'base',
@@ -58,6 +62,7 @@ export const food = [
     portions: 1,
     unit: units.SLICE,
     isVegeFriendly: false,
+    kcal: 150,
   },
   {
     type: 'base',
@@ -65,6 +70,7 @@ export const food = [
     portions: 3,
     unit: units.SLICE,
     isVegeFriendly: false,
+    kcal: 60,
   },
   {
     type: 'base',
@@ -72,6 +78,7 @@ export const food = [
     portions: 280,
     unit: units.GRAMS,
     isVegeFriendly: true,
+    kcal: 40,
   },
   // EXTRA
   {
@@ -80,6 +87,7 @@ export const food = [
     portions: 5,
     unit: units.ITEM,
     isVegeFriendly: true,
+    kcal: 10,
   },
   {
     type: 'extra',
@@ -87,6 +95,7 @@ export const food = [
     portions: 0.5,
     unit: units.ITEM,
     isVegeFriendly: true,
+    kcal: 30,
   },
   {
     type: 'extra',
@@ -94,5 +103,6 @@ export const food = [
     portions: 1.2,
     unit: units.ITEM,
     isVegeFriendly: true,
+    kcal: 5,
   },
 ];
