@@ -1,23 +1,11 @@
 import { CHEESE_PORTIONS, units } from '~/components/calculator/calculator.const';
 
-interface Aliment {
-  type: string;
-  id: string;
-  portions: number;
-  unit: string;
-  isVegeFriendly: boolean;
-  kcal?: number;
+// exported for testing purposes
+export function countKcal(food, quantity) {
+  return food.reduce((previousValue, currentValue) => previousValue + currentValue.kcal * quantity, 0)
 }
 
-interface CalculateResultsParams {
-  numberOfAdults: number;
-  numberOfChildren: number;
-  food: Aliment[];
-  extra: Aliment[];
-  capacity: number;
-}
-
-export function calculateResults({ numberOfAdults, numberOfChildren, food, extra, capacity }: CalculateResultsParams) {
+export function calculateResults({ numberOfAdults, numberOfChildren, food, capacity }) {
   const quantity = numberOfAdults + numberOfChildren / 2;
   const adultKcal = 1300;
   const childKcal = 600;
@@ -26,28 +14,16 @@ export function calculateResults({ numberOfAdults, numberOfChildren, food, extra
   let currentKcal = 0;
   let newQuantity = quantity;
 
-  [...food, ...extra].forEach(aliment => {
-    if (aliment.kcal) {
-      currentKcal += aliment.kcal * newQuantity;
-    }
-  });
+  currentKcal = countKcal(food, newQuantity);
 
   while (currentKcal < totalKcal) {
     currentKcal = 0;
     newQuantity += 0.5;
-    [...food, ...extra].forEach(aliment => {
-      if (aliment.kcal) {
-        currentKcal += aliment.kcal * newQuantity;
-      }
-    });
+    currentKcal = countKcal(food, newQuantity);
   }
 
   return [
     ...food.map((aliment) => ({
-      ...aliment,
-      quantity: aliment.portions * newQuantity * capacity,
-    })),
-    ...extra.map((aliment) => ({
       ...aliment,
       quantity: aliment.portions * newQuantity * capacity,
     })),
