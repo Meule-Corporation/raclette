@@ -40,15 +40,15 @@
         <h3 class="mt-2">{{ $t('what-eat.base') }}</h3>
         <FoodSelector
           :available-foods="filterFood('base')"
-          :selected-foods="formData.food"
-          @food-clicked="(value) => clickItem('food', value)"
+          :selected-foods="selectedBaseFoods"
+          @food-clicked="clickItem"
         />
 
         <h3 class="mt-2">{{ $t('what-eat.extra') }}</h3>
         <FoodSelector
           :available-foods="filterFood('extra')"
-          :selected-foods="formData.extra"
-          @food-clicked="(value) => clickItem('extra', value)"
+          :selected-foods="selectedExtraFoods"
+          @food-clicked="clickItem"
         />
 
         <div class="my-2">
@@ -132,7 +132,7 @@ export default {
       return !(
         (this.formData.numberOfAdults > 0 ||
           this.formData.numberOfChildren > 0) &&
-        (this.formData.extra.length > 0 || this.formData.food.length > 0)
+        this.formData.food.length > 0
       );
     },
     clearButtonDisabled() {
@@ -143,6 +143,12 @@ export default {
     },
     results() {
       return calculateResults(this.formData);
+    },
+    selectedBaseFoods() {
+      return this.formData.food.filter((food) => food.type === 'base');
+    },
+    selectedExtraFoods() {
+      return this.formData.food.filter((food) => food.type === 'extra');
     },
   },
   created() {
@@ -164,7 +170,6 @@ export default {
       return {
         numberOfAdults: 0,
         numberOfChildren: 0,
-        extra: [],
         food: [],
         capacity: 1,
       };
@@ -172,9 +177,6 @@ export default {
     removeVegeSelectedItems() {
       this.formData = {
         ...this.formData,
-        extra: this.formData.extra.filter(
-          (food) => food.isVegeFriendly === this.isUserVege
-        ),
         food: this.formData.food.filter(
           (food) => food.isVegeFriendly === this.isUserVege
         ),
@@ -196,12 +198,12 @@ export default {
     updateForm(formProperty, value) {
       this.formData[formProperty] = value;
     },
-    clickItem(type, item) {
-      const indexOfItem = this.formData[type].indexOf(item);
+    clickItem(item) {
+      const indexOfItem = this.formData.food.indexOf(item);
       if (indexOfItem < 0) {
-        this.formData[type].push(item);
+        this.formData.food.push(item);
       } else {
-        this.formData[type].splice(indexOfItem, 1);
+        this.formData.food.splice(indexOfItem, 1);
       }
     },
   },
