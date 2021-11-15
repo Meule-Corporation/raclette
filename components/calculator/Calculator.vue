@@ -102,7 +102,6 @@ import { useStorage } from '@vueuse/core';
 import {
   states,
   food,
-  LOADING_TIME,
 } from '@/components/calculator/calculator.const';
 import { getLoadingTimes } from '@/components/calculator/calculator.methods';
 import { calculateResults } from '@/components/calculator/calculator.computed';
