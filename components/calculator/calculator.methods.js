@@ -1,4 +1,4 @@
-import { LOADING_TIME } from '~/components/calculator/calculator.const';
+import { LOADING_TIME } from '@/components/calculator/calculator.const';
 
 export { getLoadingTimes };
 

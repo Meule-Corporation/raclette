@@ -1,5 +1,5 @@
-import { units } from '~/components/calculator/calculator.const';
-import { countKcal, calculateResults } from '~/components/calculator/calculator.computed';
+import { ADULT_KCAL, CHILD_KCAL, units } from '@/components/calculator/calculator.const';
+import { countKcal, calculateResults } from '@/components/calculator/calculator.computed';
 
 const food = [
     {
@@ -45,41 +45,49 @@ describe('CalculatorComputed', () => {
             }
 
             const result = [
-                { 
-                    "type": "base", 
-                    "id": "jambon-blanc", 
-                    "portions": 1, 
-                    "unit": "SLICE", 
-                    "isVegeFriendly": false, 
-                    "kcal": 120, 
-                    "quantity": 12 
-                }, 
-                { 
-                    "type": "base", 
-                    "id": "bacon", 
-                    "portions": 4, 
-                    "unit": "SLICE", 
-                    "isVegeFriendly": false, 
-                    "kcal": 50, 
-                    "quantity": 48 
-                }, 
-                { 
-                    "type": "base", 
-                    "id": "chorizo", 
+                {
+                    "type": "base",
+                    "id": "jambon-blanc",
+                    "portions": 1,
+                    "unit": "SLICE",
+                    "isVegeFriendly": false,
+                    "kcal": 120,
+                    "quantity": 6.5
+                },
+                {
+                    "type": "base",
+                    "id": "bacon",
                     "portions": 4,
-                    "unit": "SLICE", 
-                    "isVegeFriendly": false, 
-                    "kcal": 50, 
-                    "quantity": 48
-                }, 
-                { 
-                    "id": "raclette-cheese", 
-                    "portions": 215, 
-                    "quantity": 430, 
-                    "unit": "GRAMS" 
+                    "unit": "SLICE",
+                    "isVegeFriendly": false,
+                    "kcal": 50,
+                    "quantity": 26
+                },
+                {
+                    "type": "base",
+                    "id": "chorizo",
+                    "portions": 4,
+                    "unit": "SLICE",
+                    "isVegeFriendly": false,
+                    "kcal": 50,
+                    "quantity": 26
+                },
+                {
+                    "id": "raclette-cheese",
+                    "portions": 215,
+                    "quantity": 430,
+                    "unit": "GRAMS"
                 }
             ]
-            expect(calculateResults(params)).toEqual(result)
+
+            const calculatedResults = calculateResults(params)
+            const minKcal = params.numberOfAdults * ADULT_KCAL + params.numberOfChildren * CHILD_KCAL;
+            const totalKcal = calculatedResults
+                .filter(aliment => aliment.id !== 'raclette-cheese')
+                .reduce((prev, curr) => prev + (curr.quantity / curr.portions) * curr.kcal, 0)
+
+            expect(totalKcal >= minKcal).toBe(true)
+            expect(calculatedResults).toEqual(result)
         })
     })
 })

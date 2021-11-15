@@ -1,4 +1,4 @@
-import { CHEESE_PORTIONS, units } from '~/components/calculator/calculator.const';
+import { CHEESE_PORTIONS, units, ADULT_KCAL, CHILD_KCAL } from '@/components/calculator/calculator.const';
 
 // exported for testing purposes
 export function countKcal(food, quantity) {
@@ -7,9 +7,7 @@ export function countKcal(food, quantity) {
 
 export function calculateResults({ numberOfAdults, numberOfChildren, food, capacity }) {
   const quantity = numberOfAdults + numberOfChildren / 2;
-  const adultKcal = 1300;
-  const childKcal = 600;
-  const totalKcal = adultKcal * numberOfAdults + childKcal * numberOfChildren;
+  const totalKcal = ADULT_KCAL * numberOfAdults + CHILD_KCAL * numberOfChildren;
 
   let currentKcal = 0;
   let newQuantity = quantity;
