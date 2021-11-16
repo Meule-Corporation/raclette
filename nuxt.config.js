@@ -28,7 +28,14 @@ export default defineNuxtConfig({
     ],
     link: [
       {rel: 'icon', type: 'image/svg', href: '/logo.svg'}
-    ]
+    ],
+    script: [
+      {
+        src: "https://plausible.io/js/plausible.js",
+        defer: true,
+        "data-domain": "raclette.world"
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
