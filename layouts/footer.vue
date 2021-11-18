@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless>
+  <v-footer dark padless app absolute>
     <v-card flat tile class="yellow lighten-2 black--text text-center">
       <v-card-text>
         <v-btn
@@ -21,7 +21,11 @@
       <v-divider></v-divider>
 
       <v-card-text class="black--text">
-        <a href="mailto:contact@raclette.world">{{ $t('footer.contact-us.link') }}</a> - <NuxtLink to="/about-us">{{ $t('footer.about-us.link') }}</NuxtLink> - {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
+        <a href="mailto:contact@raclette.world">{{
+          $t('footer.contact-us.link')
+        }}</a>
+        - <NuxtLink to="/about-us">{{ $t('footer.about-us.link') }}</NuxtLink> -
+        {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -49,7 +53,7 @@ export default {
       },
     ].filter((icon) => icon.link),
   }),
-}
+};
 </script>
 
 <style scoped>

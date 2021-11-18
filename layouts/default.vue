@@ -1,7 +1,14 @@
 <template>
   <v-app>
     <NuxtLink to="/">
-      <v-app-bar flat color="white" prominent src="/raclette-party.jpg" @click="goToHome">
+      <v-app-bar
+        app
+        absolute
+        flat
+        color="white"
+        prominent
+        src="/raclette-party.jpg"
+      >
       </v-app-bar>
     </NuxtLink>
     <v-main>
@@ -35,11 +42,6 @@ export default {
       ],
     };
   },
-  methods: {
-    goToHome() {
-
-    }
-  }
 };
 </script>
 
