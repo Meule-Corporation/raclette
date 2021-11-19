@@ -75,8 +75,7 @@ export default {
       return parts.length !== 2 ? undefined : parts.pop().split(';').shift();
     },
     leave() {
-      location.href =
-        'https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx';
+      window.open('https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx', '_blank');
     },
   },
 };
