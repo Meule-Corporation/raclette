@@ -1,21 +1,27 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
-  </v-app>
+  <v-row justify="center" align="center">
+    <v-col cols="12" align="center">
+      <CheeseTitle />
+
+      <h3 class='text-center my-12' v-if="error.statusCode === 404">
+        {{ $t(pageNotFound) }}
+      </h3>
+      <h3 class='text-center my-12' v-else>
+        {{ $t(otherError) }}
+      </h3>
+
+      <ButtonCheese to='/'>{{ $t('backToRaclette') }}</ButtonCheese>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
+import CheeseTitle from '@/components/CheeseTitle';
+import ButtonCheese from '@/components/ButtonCheese';
+
 export default {
   name: 'Error',
-  layout: 'empty',
+  components: { ButtonCheese, CheeseTitle },
   props: {
     error: {
       type: Object,
@@ -24,22 +30,16 @@ export default {
   },
   data () {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFound: 'pageNotFound',
+      otherError: 'otherError'
     }
   },
   head () {
     const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+      this.error.statusCode === 404 ? "La page demandée n'existe pas" : 'Erreur'
     return {
       title
     }
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>

@@ -18,7 +18,9 @@ export default {
   src: url('/fonts/Bouncy.otf') format('truetype');
 }
 
-.v-application .cheese-title {
+.v-application .cheese-title.text-lg-h2,
+.v-application .cheese-title.text-md-h3,
+.v-application .cheese-title.text-h4 {
   font-family: Bouncy,serif !important;
 }
 </style>

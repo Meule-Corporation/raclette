@@ -19,16 +19,16 @@ export default {
 <style scoped>
 .button-cheese.v-btn {
   border-color: black !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .button-cheese.v-btn.v-size--x-large {
-  border: 4px solid;
+  border: 4px solid !important;
 }
 
 
 .button-cheese.v-btn.v-size--x-small {
-  border: 2px solid;
+  border: 2px solid !important;
 }
 
 

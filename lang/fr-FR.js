@@ -44,4 +44,7 @@ export default {
   'cookie.accept': 'Fais péter les cornichons',
   'cookie.refuse': 'Je veux vraiment des cookies',
   'capacity-slider.title': 'Niveau appétit ça se passe comment ?',
+  'pageNotFound': "Oups ! En voilà un qui a cherché les quantités pour la tartiflette plutôt que la raclette",
+  'otherError': "Un boulversement dans le metaverse a créé une erreur que nous n'avions pas prévue",
+  'backToRaclette': "Retourner vers la raclette"
 }
