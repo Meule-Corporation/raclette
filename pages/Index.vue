@@ -1,19 +1,20 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12">
-      <cheese-title></cheese-title>
-      <calculator />
+      <CheeseTitle />
+      <Calculator />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import colors from 'vuetify/lib/util/colors'
-import calculator from '@/components/calculator/calculator'
+import Calculator from '@/components/calculator/Calculator'
+import CheeseTitle from '@/components/CheeseTitle'
 
 export default {
   name: 'Index',
-  components: { calculator },
+  components: { Calculator, CheeseTitle },
   mounted() {
     console.log("%c \n" +
     "         _--\"-.\n" +
