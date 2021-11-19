@@ -33,15 +33,15 @@ export default {
     icons: [
       {
         text: 'mdi-facebook',
-        link: '',
+        link: 'https://www.facebook.com/raclette.world',
       },
       {
         text: 'mdi-twitter',
-        link: '',
+        link: 'https://twitter.com/RacletteW',
       },
       {
         text: 'mdi-linkedin',
-        link: '',
+        link: 'https://www.linkedin.com/company/raclette-world',
       },
       {
         text: 'mdi-instagram',
