@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'NumberOfPeoplePicker',
   props: {
     label: {
       type: String,

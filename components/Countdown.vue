@@ -29,16 +29,22 @@
       >
         {{ twoDigits(seconds) }} {{ $t('second') }}
       </v-chip>
-      <loading-cheese></loading-cheese>
+      <LoadingCheese />
     </v-col>
   </v-row>
 </template>
 
 <script>
+import LoadingCheese from '@/components/LoadingCheese';
+
 const DEADLINE = 'October 25, 2021'
 let interval = null
 
 export default {
+  name: 'Countdown',
+  components: {
+    LoadingCheese
+  },
   data() {
     return {
       now: Math.trunc(new Date().getTime() / 1000),

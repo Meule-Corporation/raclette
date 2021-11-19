@@ -3,14 +3,14 @@
     <v-col align="center" cols="12" offset="0" sm='10' offset-sm='1' lg='8' offset-lg='2'>
       <form v-if="state === statesEnum.INITIAL">
         <h2>{{ $t('who-eat') }}</h2>
-        <numberOfPeoplePicker
+        <NumberOfPeoplePicker
           label="adult"
           :count="formData.numberOfAdults"
           @count-updated="
             (updatedCount) => updateForm('numberOfAdults', updatedCount)
           "
         />
-        <numberOfPeoplePicker
+        <NumberOfPeoplePicker
           label="children"
           :count="formData.numberOfChildren"
           @count-updated="
@@ -30,49 +30,49 @@
         </div>
 
         <h3 class="mt-2">{{ $t('what-eat.base') }}</h3>
-        <foodSelector
+        <FoodSelector
           :available-foods="filterFood('base')"
           :selected-foods="formData.food"
           @food-clicked="(value) => clickItem('food', value)"
         />
 
         <h3 class="mt-2">{{ $t('what-eat.extra') }}</h3>
-        <foodSelector
+        <FoodSelector
           :available-foods="filterFood('extra')"
           :selected-foods="formData.extra"
           @food-clicked="(value) => clickItem('extra', value)"
         />
 
         <div class="my-2">
-          <button-cheese
+          <ButtonCheese
             :disabled="clearButtonDisabled"
             class="ma-2"
             @click="clear"
-            >{{ $t('calculator.form.clear') }}</button-cheese
+            >{{ $t('calculator.form.clear') }}</ButtonCheese
           >
-          <button-cheese
+          <ButtonCheese
             :disabled="submitButtonDisabled"
             class="ma-2"
             @click="submit"
-            >{{ $t('calculator.form.submit') }}</button-cheese
+            >{{ $t('calculator.form.submit') }}</ButtonCheese
           >
         </div>
       </form>
       <div v-else-if="state === statesEnum.LOADING_RESULTS">
-        <loading-cheese></loading-cheese>
+        <LoadingCheese />
       </div>
       <div v-if="state === statesEnum.DISPLAY_RESULTS">
-        <capacity-slider
+        <CapacitySlider
           @capacity-updated="
             (updatedCapacity) => updateForm('capacity', updatedCapacity)
           "
         />
-        <calculation-results class="mb-8" :results="results" />
-        <button-cheese
+        <CalculationResults class="mb-8" :results="results" />
+        <ButtonCheese
           :disabled="clearButtonDisabled"
           class="ma-2"
           @click="clear"
-          >{{ $t('calculator.form.restart') }}</button-cheese
+          >{{ $t('calculator.form.restart') }}</ButtonCheese
         >
       </div>
     </v-col>
@@ -80,22 +80,27 @@
 </template>
 
 <script>
-import buttonCheese from '@/components/button-cheese';
-import loadingCheese from '@/components/loading-cheese';
-import numberOfPeoplePicker from '@/components/calculator/numberOfPeoplePicker.vue';
-import foodSelector from '@/components/calculator/foodSelector';
+// Common components
+import ButtonCheese from '@/components/ButtonCheese';
+import LoadingCheese from '@/components/LoadingCheese';
+// Calculator components
+import NumberOfPeoplePicker from '@/components/calculator/NumberOfPeoplePicker';
+import FoodSelector from '@/components/calculator/FoodSelector';
+import CalculationResults from '@/components/calculator/CalculationResults';
+import CapacitySlider from '@/components/calculator/CapacitySlider';
+
+// Helpers
 import { units, states, food, LOADING_TIME, CHEESE_PORTIONS } from '@/components/calculator/calculator.const';
-import CalculationResults from '@/components/calculator/calculation-results';
-import CapacitySlider from '@/components/calculator/capacity-slider';
 
 export default {
+  name: 'Calculator',
   components: {
     CapacitySlider,
     CalculationResults,
-    loadingCheese,
-    buttonCheese,
-    numberOfPeoplePicker,
-    foodSelector,
+    LoadingCheese,
+    ButtonCheese,
+    NumberOfPeoplePicker,
+    FoodSelector,
   },
   data() {
     return {

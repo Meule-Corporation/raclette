@@ -18,16 +18,17 @@
       <cookie-consent />
     </v-main>
 
-    <foot />
+    <Foot />
   </v-app>
 </template>
 
 <script>
-import foot from '@/layouts/footer.vue';
+import Foot from '@/layouts/Foot';
 
 export default {
+  name: 'Default',
   components: {
-    foot,
+    Foot,
   },
   head() {
     return {
