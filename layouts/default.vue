@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!--    header -->
     <NuxtLink to="/">
       <v-app-bar
         app
@@ -11,14 +12,18 @@
       >
       </v-app-bar>
     </NuxtLink>
+
     <v-main>
       <v-container class="fill-height">
         <Nuxt />
       </v-container>
-      <CookieConsent />
     </v-main>
 
+    <!--    footer -->
     <Foot />
+
+    <!--    This is a snackbar -->
+    <CookieConsent />
   </v-app>
 </template>
 
