@@ -5,8 +5,8 @@
     :timeout="-1"
     outlined
     rounded
+    bottom
     :right='!isMobile'
-    :app='!isMobile'
     :transition="transition"
   >
     <span class="cookie-consent-message">
