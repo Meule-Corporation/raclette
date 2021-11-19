@@ -1,29 +1,27 @@
 <template>
   <v-snackbar
     v-model="show"
-    transition="fade"
-    :vertical="true"
+    vertical
     :timeout="-1"
-    content-class="snack-content"
-    :right="true"
     outlined
     rounded
-    app
-    absolute
+    :right='!isMobile'
+    :app='!isMobile'
+    :transition="transition"
   >
     <span class="cookie-consent-message">
       {{ $t('cookie.message') }}
     </span>
 
-    <template #action="{}">
+    <template v-slot:action="{ attrs }">
       <v-row no-gutters>
         <v-col>
-          <ButtonCheese size="x-small" class="ma-2" @click="leave">
+          <ButtonCheese v-bind="attrs" size="x-small" class="ma-2" @click="leave">
             {{ $t('cookie.refuse') }}
           </ButtonCheese>
         </v-col>
         <v-col>
-          <ButtonCheese size="x-small" class="ma-2" @click="dismiss">
+          <ButtonCheese v-bind="attrs" size="x-small" class="ma-2" @click="dismiss">
             {{ $t('cookie.accept') }}
           </ButtonCheese>
         </v-col>
@@ -38,12 +36,6 @@ import ButtonCheese from '@/components/ButtonCheese';
 export default {
   name: 'CookieConsent',
   components: { ButtonCheese },
-  props: {
-    transition: {
-      type: String,
-      default: 'cookie-consent-transition',
-    },
-  },
   data() {
     return {
       show: undefined,
@@ -53,6 +45,12 @@ export default {
     cookie() {
       return !this.getCookie('cookie_a_la_raclette');
     },
+    isMobile() {
+      return this.$vuetify.breakpoint.mobile;
+    },
+    transition() {
+      return this.isMobile ? 'slide-y-reverse-transition' : 'fade-transition';
+    }
   },
   beforeMount() {
     setTimeout(() => {
@@ -83,22 +81,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.v-snack__action {
-  align-self: auto !important;
-}
-
-.snack-content {
-  margin-right: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
