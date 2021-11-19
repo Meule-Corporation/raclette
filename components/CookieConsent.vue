@@ -18,14 +18,14 @@
     <template #action="{}">
       <v-row no-gutters>
         <v-col>
-          <button-cheese size="x-small" class="ma-2" @click="leave">
+          <ButtonCheese size="x-small" class="ma-2" @click="leave">
             {{ $t('cookie.refuse') }}
-          </button-cheese>
+          </ButtonCheese>
         </v-col>
         <v-col>
-          <button-cheese size="x-small" class="ma-2" @click="dismiss">
+          <ButtonCheese size="x-small" class="ma-2" @click="dismiss">
             {{ $t('cookie.accept') }}
-          </button-cheese>
+          </ButtonCheese>
         </v-col>
       </v-row>
     </template>
@@ -33,10 +33,12 @@
 </template>
 
 <script>
+import ButtonCheese from '@/components/ButtonCheese';
+
 export default {
   name: 'CookieConsent',
+  components: { ButtonCheese },
   props: {
-    // default
     transition: {
       type: String,
       default: 'cookie-consent-transition',

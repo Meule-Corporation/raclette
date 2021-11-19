@@ -1,5 +1,5 @@
 <template>
-  <card-cheese>
+  <CardCheese>
     <v-card-title>
       {{ $t('calculator.card.result.title') }}
     </v-card-title>
@@ -24,11 +24,15 @@
       </v-list>
       <v-card-actions>Pour en savoir plus sur les personnes brillantes derrière ce projet révolutionnaire, c'est par &nbsp;<NuxtLink to="/about-us">ici</NuxtLink></v-card-actions>
     </v-card-text>
-  </card-cheese>
+  </CardCheese>
 </template>
+
 <script>
+import CardCheese from '@/components/CardCheese';
+
 export default {
   name: 'CalculationResults',
+  components: { CardCheese },
   props: {
     results: {}
   }

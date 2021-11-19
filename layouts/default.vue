@@ -15,7 +15,7 @@
       <v-container class="fill-height">
         <Nuxt />
       </v-container>
-      <cookie-consent />
+      <CookieConsent />
     </v-main>
 
     <Foot />
@@ -23,11 +23,13 @@
 </template>
 
 <script>
-import Foot from '@/layouts/Foot';
+import Foot from '@/components/Foot';
+import CookieConsent from '@/components/CookieConsent';
 
 export default {
   name: 'Default',
   components: {
+    CookieConsent,
     Foot,
   },
   head() {

@@ -4,7 +4,7 @@
       <h2 class="text-sm-h2 my-6 text-center">Les co-fondateurs</h2>
       <v-row>
         <v-col cols="12" offset='0' sm='10' offset-sm='1'>
-          <card-cheese>
+          <CardCheese>
             <v-img
               class="white--text align-end"
               src="/img/raclette-world-co-funders.jpg"
@@ -29,36 +29,36 @@
                 de raclette d'une efficacité sans pareil.
               </div>
             </v-card-text>
-          </card-cheese>
+          </CardCheese>
         </v-col>
       </v-row>
       <h2 class="text-sm-h2 my-6 text-center">Nos valeurs</h2>
       <v-row>
         <v-col cols="12" sm='4'>
-          <card-cheese class='mb-4'>
+          <CardCheese class='mb-4'>
             <v-img class="white--text align-end" src="/img/1.jpg">
               <v-card-title>L'exigence</v-card-title>
             </v-img>
-          </card-cheese>
+          </CardCheese>
           </v-col>
         <v-col cols="12" sm='4'>
-          <card-cheese class='mb-4'>
+          <CardCheese class='mb-4'>
             <v-img class="white--text align-end" src="/img/3.jpg">
               <v-card-title>La qualité</v-card-title>
             </v-img>
-          </card-cheese>
+          </CardCheese>
         </v-col>
         <v-col cols="12" sm='4'>
-          <card-cheese class='mb-4'>
+          <CardCheese class='mb-4'>
             <v-img class="white--text align-end" src="/img/2.jpg">
               <v-card-title>La persévérance</v-card-title>
             </v-img>
-          </card-cheese>
+          </CardCheese>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols='12'>
-          <card-cheese>
+          <CardCheese>
             <v-card-title class='justify-center'
             >Ils parlent de nous
             </v-card-title
@@ -73,7 +73,7 @@
                 </p>
               </div>
             </v-card-text>
-          </card-cheese>
+          </CardCheese>
         </v-col>
       </v-row>
         <h2 class="text-sm-h2 my-6 text-center">
@@ -81,7 +81,7 @@
         </h2>
       <v-row>
         <v-col cols="12" sm='4'>
-          <card-cheese class='mb-4'>
+          <CardCheese class='mb-4'>
             <v-img class="white--text align-end" src="/img/4.jpg">
               <v-card-title>François Hollande</v-card-title>
             </v-img>
@@ -93,10 +93,10 @@
                 >
               </div>
             </v-card-text>
-          </card-cheese>
+          </CardCheese>
         </v-col>
         <v-col cols="12" sm='4'>
-          <card-cheese class='mb-4'>
+          <CardCheese class='mb-4'>
             <v-img class="white--text align-end" src="/img/5.jpg">
               <v-card-title>Des gens random</v-card-title>
             </v-img>
@@ -109,10 +109,10 @@
                 >
               </div>
             </v-card-text>
-          </card-cheese>
+          </CardCheese>
         </v-col>
         <v-col cols="12" sm='4'>
-          <card-cheese class='mb-4'>
+          <CardCheese class='mb-4'>
             <v-img class="white--text align-end" src="/img/6.jpg">
               <v-card-title>Jul</v-card-title>
             </v-img>
@@ -124,7 +124,7 @@
                 >
               </div>
             </v-card-text>
-          </card-cheese>
+          </CardCheese>
         </v-col>
       </v-row>
     </v-col>
@@ -132,7 +132,10 @@
 </template>
 
 <script>
+import CardCheese from '../components/CardCheese';
+
 export default {
   name: 'AboutUs',
+  components: { CardCheese },
 };
 </script>
