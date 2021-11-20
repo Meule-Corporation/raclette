@@ -11,8 +11,8 @@ export const states = {
   DISPLAY_RESULTS: 'DISPLAY_RESULTS',
 };
 
-// In ms
-export const LOADING_TIME = 5000;
+// In s
+export const LOADING_TIME = 5;
 // In grams
 export const CHEESE_PORTIONS = 215;
 

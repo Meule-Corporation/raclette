@@ -90,7 +90,9 @@ import CalculationResults from '@/components/calculator/CalculationResults';
 import CapacitySlider from '@/components/calculator/CapacitySlider';
 
 // Helpers
+import { useStorage } from '@vueuse/core';
 import { units, states, food, LOADING_TIME, CHEESE_PORTIONS } from '@/components/calculator/calculator.const';
+import { getLoadingTimes } from '@/components/calculator/calculator.methods';
 
 export default {
   name: 'Calculator',
@@ -104,6 +106,7 @@ export default {
   },
   data() {
     return {
+      usageCount: 0,
       isUserVege: false,
       formData: this.getInitalFormData(),
       // One of INITIAL, LOADING_RESULTS, DISPLAY_RESULTS
@@ -148,6 +151,10 @@ export default {
       ]
     }
   },
+  created() {
+    // Get the usage count from local storage
+    this.usageCount = useStorage('usage-count', 0);
+  },
   methods: {
     filterFood(foodType) {
       return food.filter((food) => {
@@ -175,11 +182,12 @@ export default {
     },
     submit() {
       this.state = states.LOADING_RESULTS;
+      this.usageCount.value += 1;
 
       // Wait and display the result
       setTimeout(() => {
         this.state = states.DISPLAY_RESULTS;
-      }, LOADING_TIME);
+      }, getLoadingTimes({ usageCount: this.usageCount.value }));
     },
     clear() {
       this.formData = this.getInitalFormData();

@@ -23,6 +23,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.1.0",
     "@nuxtjs/pwa": "^3.3.5",
+    "@vueuse/core": "^6.9.2",
     "core-js": "^3.15.1",
     "nuxt-edge": "latest",
     "vuetify": "^2.5.5"
