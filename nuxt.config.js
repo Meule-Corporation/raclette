@@ -45,6 +45,8 @@ export default defineNuxtConfig({
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // https://vueuse.org/guide/
+    '@vueuse/core/nuxt'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
