@@ -15,14 +15,14 @@
 
           <v-list-item-content>
             <p class="font-weight-bold text-left align-center mb-0">
-              {{ $t(result.id) }}:
+              {{ $t(result.id) }} :
               {{ Math.round(result.quantity + Number.EPSILON) }}
               {{ $tc(result.unit, result.quantity) }}
             </p>
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <v-card-actions>Pour en savoir plus sur les personnes brillantes derrière ce projet révolutionnaire, c'est par &nbsp;<NuxtLink to="/about-us">ici</NuxtLink></v-card-actions>
+      <v-card-actions>{{ $t('moreInfos.text') }}&nbsp<NuxtLink to="/about-us">{{ $t('moreInfos.link') }}</NuxtLink></v-card-actions>
     </v-card-text>
   </CardCheese>
 </template>
