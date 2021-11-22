@@ -32,9 +32,10 @@ export default defineNuxtConfig({
     ],
     script: [
       {
-        src: "https://plausible.io/js/plausible.js",
+        src: "/anal/ytics.js",
         defer: true,
-        "data-domain": "raclette.world"
+        "data-domain": "raclette.world",
+        "data-api": "/anal/ytics/api/event"
       },
     ],
   },
