@@ -31,7 +31,7 @@ const food = [
 describe('CalculatorComputed', () => {
     describe('countKcal', () => {
         it('should count the kcal of all aliments', () => {
-            expect(countKcal(food, 2)).toBe(440)
+            expect(countKcal({ food, quantity: 2 })).toBe(440)
         })
     })
 
@@ -52,7 +52,7 @@ describe('CalculatorComputed', () => {
                     "unit": "SLICE",
                     "isVegeFriendly": false,
                     "kcal": 120,
-                    "quantity": 6.5
+                    "quantity": 2
                 },
                 {
                     "type": "base",
@@ -61,7 +61,7 @@ describe('CalculatorComputed', () => {
                     "unit": "SLICE",
                     "isVegeFriendly": false,
                     "kcal": 50,
-                    "quantity": 26
+                    "quantity": 8
                 },
                 {
                     "type": "base",
@@ -70,7 +70,7 @@ describe('CalculatorComputed', () => {
                     "unit": "SLICE",
                     "isVegeFriendly": false,
                     "kcal": 50,
-                    "quantity": 26
+                    "quantity": 8
                 },
                 {
                     "id": "raclette-cheese",
@@ -80,14 +80,7 @@ describe('CalculatorComputed', () => {
                 }
             ]
 
-            const calculatedResults = calculateResults(params)
-            const minKcal = params.numberOfAdults * ADULT_KCAL + params.numberOfChildren * CHILD_KCAL;
-            const totalKcal = calculatedResults
-                .filter(aliment => aliment.id !== 'raclette-cheese')
-                .reduce((prev, curr) => prev + (curr.quantity / curr.portions) * curr.kcal, 0)
-
-            expect(totalKcal >= minKcal).toBe(true)
-            expect(calculatedResults).toEqual(result)
+            expect(calculateResults(params)).toEqual(result)
         })
     })
 })

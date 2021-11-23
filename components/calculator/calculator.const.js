@@ -11,19 +11,23 @@ export const states = {
   DISPLAY_RESULTS: 'DISPLAY_RESULTS',
 };
 
-// In s
+// Le temps de calcul initial en secondes lorsque l'IA n'est pas entraînée
 export const LOADING_TIME = 5;
-// In grams
+// La portion de raclette en grammes par adulte
 export const CHEESE_PORTIONS = 215;
-// In kcal
-export const ADULT_KCAL = 700;
-export const CHILD_KCAL = 400;
+// Le nombre de calories en kcal pour un repas tout compris
+export const ADULT_KCAL = 1000;
+export const CHILD_KCAL = 600;
+// Le nombre de calories en kcal pour 1g de fromage à raclette
+export const CHEESE_KCAL = 110 / 30;
 
 /**
  * type: soit un aliment de base "base" ou un petit extra qui fait plaisir "extra"
  * id: identifiant de l'ingrédient qui doit correspondre à sa clé pour la traduction dans le fichier JSON
  * portions: le facteur multiplicateur à utiliser pour chaque personne, il peut s'agir de tranches, de grammes
  * unit: l'unité à utiliser pour l'affichage des résultats
+ * isVegeFriendly: indique si l'ingrédient est compatible avec les végétariens
+ * kcal: le nombre de calories en kcal que représente l'ingrédient * portions
  */
 export const food = [
   // BASE
@@ -81,7 +85,6 @@ export const food = [
     portions: 280,
     unit: units.GRAMS,
     isVegeFriendly: true,
-    kcal: 240,
   },
   // EXTRA
   {
