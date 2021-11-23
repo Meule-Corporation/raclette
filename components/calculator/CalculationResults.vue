@@ -22,7 +22,11 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <v-card-actions>{{ $t('moreInfos.text') }}&nbsp<NuxtLink to="/about-us">{{ $t('moreInfos.link') }}</NuxtLink></v-card-actions>
+      <v-card-actions>
+        <span>
+          {{ $t('moreInfos.text') }}&nbsp<NuxtLink to='/about-us'>{{ $t('moreInfos.link') }}</NuxtLink>
+        </span>
+      </v-card-actions>
     </v-card-text>
   </CardCheese>
 </template>
