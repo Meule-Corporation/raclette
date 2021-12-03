@@ -25,7 +25,8 @@ export default defineNuxtConfig({
       {hid: 'description', name: 'description', content: "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
       {hid: 'og:title', name: 'og:title', content: "Raclette.World: Les quantités de raclette, par l'IA"},
       {hid: 'og:site_name', name: 'og:site_name', content: "Raclette.World: Les quantités de raclette, par l'IA"},
-      {name: 'format-detection', content: 'telephone=no'}
+      {name: 'format-detection', content: 'telephone=no'},
+      {name: 'google-site-verification', content: '1hHF9NCm0ceJbA52urM-wKY7t1t-lbN58XUXnXjQ-7A'},
     ],
     link: [
       {rel: 'icon', type: 'image/svg', href: '/logo.svg'}
