@@ -22,7 +22,10 @@ export default defineNuxtConfig({
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid:'twitter:site', name:'twitter:site', content:'@RacletteW'},
+      {hid:'twitter:card', name:'twitter:card', content:'summary'},
       {hid: 'description', name: 'description', content: "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
+      {hid: 'og:description', name: 'og:description', content: "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
       {hid: 'og:title', name: 'og:title', content: "Raclette.World: Les quantités de raclette, par l'IA"},
       {hid: 'og:site_name', name: 'og:site_name', content: "Raclette.World: Les quantités de raclette, par l'IA"},
       {hid: 'og:image', name: 'og:image', content: "https://raclette.world/icon.png"},
