@@ -7,8 +7,8 @@
         color="grey darken-2"
         track-color="yellow lighter-2"
         height='32'
-        :min="1"
-        :max="1.2"
+        :min="0.7"
+        :max="1.3"
         :step="0.01"
         hide-details
         @input="$emit('capacity-updated', hungriness)"
@@ -35,7 +35,7 @@ export default {
   name: 'CapacitySlider',
   data() {
     return {
-      hungriness: 1.1,
+      hungriness: 1,
     };
   },
 };

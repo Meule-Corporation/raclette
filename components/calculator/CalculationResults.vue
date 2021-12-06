@@ -7,7 +7,7 @@
     <v-card-text>
       <v-list color='transparent'>
         <v-list-item
-            v-for='result of results' :key="`${result.id}-${result.unit}`"
+            v-for='result in results' :key="result.id"
         >
           <v-list-item-avatar rounded left>
             <v-img :src="`food/${result.id}.svg`"/>
@@ -38,7 +38,10 @@ export default {
   name: 'CalculationResults',
   components: { CardCheese },
   props: {
-    results: {}
+    results: {
+      type: Array,
+      required: true,
+    }
   }
 }
 </script>
