@@ -30,7 +30,7 @@ export default defineNuxtConfig({
       {hid: 'og:site_name', name: 'og:site_name', content: "Raclette.World: Les quantités de raclette, par l'IA"},
       {hid: 'og:image', name: 'og:image', content: "https://raclette.world/icon.png"},
       {name: 'format-detection', content: 'telephone=no'},
-      {name: 'google-site-verification', content: '1hHF9NCm0ceJbA52urM-wKY7t1t-lbN58XUXnXjQ-7A'},
+      {name: 'google-site-verification', content: '4HAdqAwqavgSyg5VihoVVCtvL4_YBAvCFlrLuRs9U_I'},
     ],
     link: [
       {rel: 'icon', type: 'image/svg', href: '/logo.svg'}
