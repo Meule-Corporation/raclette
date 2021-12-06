@@ -17,7 +17,7 @@
             <p class="font-weight-bold text-left align-center mb-0">
               {{ $t(result.id) }} :
               {{ Math.round(result.quantity + Number.EPSILON) }}
-              {{ $tc(result.unit, result.quantity) }}
+              {{ $tc(result.unit, Math.round(result.quantity + Number.EPSILON)) }}
             </p>
           </v-list-item-content>
         </v-list-item>

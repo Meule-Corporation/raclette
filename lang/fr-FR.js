@@ -40,6 +40,8 @@ export default {
     'HALF_GRINDSTONE': 'Demi-meule | Demi-meules',
     'ITEM': '',
     'calculator.form.isUserVege': "J'aime la raclette mais je suis végétarien",
+    'calculator.form.isUserVegan': "J'aime la raclette mais je suis végan",
+  'user-vegan-informations': "Malheureusement nous ne pouvons pas faire ce calcul pour le moment... Nous sommes en négociation avec Mark Zuckerberg lui-même pour accéder au Metaverse et ainsi pouvoir configurer le cœur quantique de notre moteur de prédictions. Nous sommes désolés pour ce désagrément.",
   'cookie.message': 'Nous n\'avons pas de cookie ici, uniquement de la raclette',
   'cookie.accept': 'Fais péter les cornichons',
   'cookie.refuse': 'Je veux vraiment des cookies',
