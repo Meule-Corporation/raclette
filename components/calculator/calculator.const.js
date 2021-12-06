@@ -13,13 +13,18 @@ export const states = {
 
 // Le temps de calcul initial en secondes lorsque l'IA n'est pas entraînée
 export const LOADING_TIME = 5;
-// La portion de raclette en grammes par adulte
-export const CHEESE_PORTIONS = 215;
+
 // Le nombre de calories en kcal pour un repas tout compris
-export const ADULT_KCAL = 1000;
-export const CHILD_KCAL = 600;
-// Le nombre de calories en kcal pour 1g de fromage à raclette
-export const CHEESE_KCAL = 110 / 30;
+export const ADULT_KCAL = 500;
+export const CHILD_KCAL = 250;
+
+// Les données pour le fromage à raclette qui est automatiquement ajouté à la liste des ingrédients
+export const RACLETTE_CHEESE = {
+  id: 'raclette-cheese',
+  portions: 230,
+  unit: units.GRAMS,
+  kcal: 840,
+}
 
 /**
  * type: soit un aliment de base "base" ou un petit extra qui fait plaisir "extra"
@@ -45,7 +50,7 @@ export const food = [
     portions: 4,
     unit: units.SLICE,
     isVegeFriendly: false,
-    kcal: 90,
+    kcal: 44,
   },
   {
     type: 'base',
@@ -61,7 +66,7 @@ export const food = [
     portions: 3,
     unit: units.SLICE,
     isVegeFriendly: false,
-    kcal: 150,
+    kcal: 75,
   },
   {
     type: 'base',
@@ -77,7 +82,7 @@ export const food = [
     portions: 3,
     unit: units.SLICE,
     isVegeFriendly: false,
-    kcal: 285,
+    kcal: 120,
   },
   {
     type: 'base',
@@ -85,6 +90,7 @@ export const food = [
     portions: 280,
     unit: units.GRAMS,
     isVegeFriendly: true,
+    kcal: 215,
   },
   // EXTRA
   {
