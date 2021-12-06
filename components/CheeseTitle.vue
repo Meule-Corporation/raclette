@@ -1,7 +1,7 @@
 <template>
     <v-row justify="center" align="center">
       <v-col >
-        <h1 class="cheese-title text-lg-h2 text-md-h3 text-h4 text-center">{{ $t('raclette.tonight') }}</h1>
+        <h1 class="cheese-title mt-2 text-lg-h2 text-md-h3 text-h4 text-center">{{ $t('raclette.tonight') }}</h1>
       </v-col>
     </v-row>
 </template>
