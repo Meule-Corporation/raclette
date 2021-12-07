@@ -20,6 +20,8 @@ export default {
     'rosette': 'Rosette',
     'calculator.form.extra': 'Extra',
     'cornichon': 'Cornichons',
+    'grison': 'Viande des Grisons',
+    'lettuce': 'Salade',
     'oignon-rouge': 'Oignons rouge',
     'calculator.form.email': 'E-mail',
     'calculator.form.submit': 'Calculer',
