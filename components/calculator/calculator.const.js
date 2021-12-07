@@ -1,3 +1,5 @@
+import { getRandomBetween } from '@/utils/functions';
+
 export const units = {
   SLICE: 'SLICE',
   GRAMS: 'GRAMS',
@@ -21,7 +23,7 @@ export const CHILD_KCAL = 250;
 // Les données pour le fromage à raclette qui est automatiquement ajouté à la liste des ingrédients
 export const RACLETTE_CHEESE = {
   id: 'raclette-cheese',
-  portions: 230,
+  portions: getRandomBetween(225, 235),
   unit: units.GRAMS,
   kcal: 840,
 }
