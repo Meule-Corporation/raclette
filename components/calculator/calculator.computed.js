@@ -1,4 +1,5 @@
 import { RACLETTE_CHEESE } from '@/components/calculator/calculator.const';
+import { getRandomBetween } from '~/utils/functions';
 
 export function calculateResults({
   numberOfAdults,
@@ -15,7 +16,7 @@ export function calculateResults({
     })),
     {
       ...RACLETTE_CHEESE,
-      quantity: quantity * RACLETTE_CHEESE.portions * capacity,
+      quantity: quantity * getRandomBetween(RACLETTE_CHEESE.portions) * capacity,
     },
   ];
 }
