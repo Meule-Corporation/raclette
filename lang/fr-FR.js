@@ -51,5 +51,6 @@ export default {
   'backToRaclette': "Retourner vers la raclette",
   'moreInfos.text': "Pour en savoir plus sur les personnes brillantes derrière ce projet révolutionnaire, c'est par",
   'moreInfos.link': "ici",
-  'footer.they-talk-about-us.link': 'Ils parlent de nous'
+  'footer.they-talk-about-us.link': 'Ils parlent de nous',
+  'they-talk-about-us.title': 'Ils parlent de nous'
 }
