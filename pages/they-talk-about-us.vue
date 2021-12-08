@@ -84,6 +84,30 @@ export default {
         },
         {
           mode: 'card',
+          website: 'Nice Matin',
+          img: 'nice-matin.png',
+          quote: 'C\'est le plat qui réchauffe les soirées et, pour ne pas vous égarer sur les quantités, laissez-vous guider par le calculateur de raclette.world.',
+          date: '06 Décembre 2021',
+          link: 'https://www.nicematin.com/insolite/on-mange-de-la-raclette-ce-soir-ce-calculateur-vous-indique-les-bonnes-quantites-a-acheter-731823'
+        },
+        {
+          mode: 'card',
+          website: 'C NEWS',
+          img: 'cnews.png',
+          quote: '[...] le site a utilisé l’intelligence artificielle afin de se mettre au service du consommateur',
+          date: '07 Décembre 2021',
+          link: 'https://www.cnews.fr/conso/2021-12-06/raclette-ce-site-calcule-automatiquement-les-bonnes-quantites-acheter-1157611'
+        },
+        {
+          mode: 'card',
+          website: 'Vanity Fair',
+          img: 'vanity-fair.png',
+          quote: ' le site Raclette.World permet donc de savoir combien d\'ingrédients il vous faut pour réaliser la meilleure des raclettes',
+          date: '07 Décembre 2021',
+          link: 'https://www.vanityfair.fr/actualites/article/un-simulateur-permet-de-calculer-la-quantite-exacte-dingredients-pour-votre-raclette'
+        },
+        {
+          mode: 'card',
           website: 'actu.fr',
           img: 'actu-fr.png',
           quote: '[T]rois ingénieurs lyonnais se sont amusés à créer « le premier calculateur de raclette basé sur une intelligence artificielle post-quantique » permettant de déterminer avec précision les ingrédients qui seront nécessaires pour que la raclette se déroule sous les meilleurs auspices.',
