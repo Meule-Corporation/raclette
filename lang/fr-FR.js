@@ -50,5 +50,7 @@ export default {
   'otherError': "Un boulversement dans le metaverse a créé une erreur que nous n'avions pas prévue",
   'backToRaclette': "Retourner vers la raclette",
   'moreInfos.text': "Pour en savoir plus sur les personnes brillantes derrière ce projet révolutionnaire, c'est par",
-  'moreInfos.link': "ici"
+  'moreInfos.link': "ici",
+  'footer.they-talk-about-us.link': 'Ils parlent de nous',
+  'they-talk-about-us.title': 'Ils parlent de nous'
 }

@@ -25,7 +25,9 @@
           $t('footer.contact-us.link')
         }}</a>
         - <NuxtLink to="/about-us">{{ $t('footer.about-us.link') }}</NuxtLink> -
-        {{ new Date().getFullYear() }} — <strong>raclette.world</strong>
+        <NuxtLink to="/they-talk-about-us">{{ $t('footer.they-talk-about-us.link') }}</NuxtLink> -
+
+        {{ new Date().getFullYear() }} - <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
   </v-footer>
