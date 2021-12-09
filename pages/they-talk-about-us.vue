@@ -62,7 +62,7 @@ export default {
           mode: 'card',
           website: 'BFM TV',
           img: 'bfm.png',
-          video: 'bfm.webm',
+          video: 'bfm.mp4',
           date: '09 Décembre 2021',
           link: 'https://www.bfmtv.com/'
         },
