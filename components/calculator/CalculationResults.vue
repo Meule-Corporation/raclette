@@ -24,7 +24,7 @@
       </v-list>
       <v-card-actions>
         <span>
-          {{ $t('moreInfos.text') }}&nbsp<NuxtLink to='/about-us'>{{ $t('moreInfos.link') }}</NuxtLink>
+          {{ $t('moreInfos.text') }}&nbsp<NuxtLink :to="localePath('/about-us')">{{ $t('moreInfos.link') }}</NuxtLink>
         </span>
       </v-card-actions>
     </v-card-text>
