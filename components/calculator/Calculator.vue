@@ -30,41 +30,59 @@
 
         <div class="d-flex justify-center">
           <v-switch
+            v-if="!isUserVegan"
             v-model="isUserVege"
             :label="$t('calculator.form.isUserVege')"
             color="yellow lighter-2"
             @change="removeVegeSelectedItems"
+            :hide-details="true"
           ></v-switch>
         </div>
 
-        <h3 class="mt-2">{{ $t('what-eat.base') }}</h3>
-        <FoodSelector
-          :available-foods="filterFood('base')"
-          :selected-foods="selectedBaseFoods"
-          @food-clicked="clickItem"
-        />
-
-        <h3 class="mt-2">{{ $t('what-eat.extra') }}</h3>
-        <FoodSelector
-          :available-foods="filterFood('extra')"
-          :selected-foods="selectedExtraFoods"
-          @food-clicked="clickItem"
-        />
-
-        <div class="my-2">
-          <ButtonCheese
-            :disabled="clearButtonDisabled"
-            class="ma-2"
-            @click="clear"
-            >{{ $t('calculator.form.clear') }}</ButtonCheese
-          >
-          <ButtonCheese
-            :disabled="submitButtonDisabled"
-            class="ma-2"
-            @click="submit"
-            >{{ $t('calculator.form.submit') }}</ButtonCheese
-          >
+        <div class="d-flex justify-center">
+          <v-switch
+            v-model="isUserVegan"
+            :label="$t('calculator.form.isUserVegan')"
+            color="yellow lighter-2"
+          ></v-switch>
         </div>
+
+        <v-scroll-y-reverse-transition>
+          <VeganOption v-if="isUserVegan" />
+        </v-scroll-y-reverse-transition>
+
+        <v-scroll-y-transition>
+          <div v-if='!isUserVegan'>
+            <h3 class='mt-2'>{{ $t('what-eat.base') }}</h3>
+            <FoodSelector
+              :available-foods="filterFood('base')"
+              :selected-foods='selectedBaseFoods'
+              @food-clicked='clickItem'
+            />
+
+            <h3 class='mt-2'>{{ $t('what-eat.extra') }}</h3>
+            <FoodSelector
+              :available-foods="filterFood('extra')"
+              :selected-foods='selectedExtraFoods'
+              @food-clicked='clickItem'
+            />
+
+            <div class='my-2'>
+              <ButtonCheese
+                :disabled='clearButtonDisabled'
+                class='ma-2'
+                @click='clear'
+              >{{ $t('calculator.form.clear') }}
+              </ButtonCheese>
+              <ButtonCheese
+                :disabled='submitButtonDisabled'
+                class='ma-2'
+                @click='submit'
+              >{{ $t('calculator.form.submit') }}
+              </ButtonCheese>
+            </div>
+          </div>
+        </v-scroll-y-transition>
       </form>
       <div v-else-if="state === statesEnum.LOADING_RESULTS">
         <LoadingCheese />
@@ -99,16 +117,15 @@ import CapacitySlider from '@/components/calculator/CapacitySlider';
 
 // Helpers
 import { useStorage } from '@vueuse/core';
-import {
-  states,
-  food,
-} from '@/components/calculator/calculator.const';
+import { food, states } from '@/components/calculator/calculator.const';
 import { getLoadingTimes } from '@/components/calculator/calculator.methods';
 import { calculateResults } from '@/components/calculator/calculator.computed';
+import VeganOption from '@/components/calculator/VeganOption';
 
 export default {
   name: 'Calculator',
   components: {
+    VeganOption,
     CapacitySlider,
     CalculationResults,
     LoadingCheese,
@@ -120,6 +137,7 @@ export default {
     return {
       usageCount: 0,
       isUserVege: false,
+      isUserVegan: false,
       formData: this.getInitalFormData(),
       // One of INITIAL, LOADING_RESULTS, DISPLAY_RESULTS
       state: states.INITIAL,
@@ -208,28 +226,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#slide {
-  margin-left: -1000px;
-  width: 100px;
-  height: 100px;
-  background: blue;
-  -webkit-animation: slide 0.5s forwards;
-  -webkit-animation-delay: 2s;
-  animation: slide 0.5s forwards;
-  animation-delay: 2s;
-}
-
-@-webkit-keyframes slide {
-  100% {
-    margin-left: 0;
-  }
-}
-
-@keyframes slide {
-  100% {
-    margin-left: 0;
-  }
-}
-</style>

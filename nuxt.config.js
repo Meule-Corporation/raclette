@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     fallback: true
   },
   bridge: {
-    nitro: false
+    nitro: false,
+    vite: false
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
