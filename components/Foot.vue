@@ -21,9 +21,6 @@
       <v-divider></v-divider>
 
       <v-card-text class="black--text">
-        <v-row>
-          <v-col cols='12'>
-
             <a href="mailto:contact@raclette.world">{{
                 $t('footer.contact-us.link')
               }}</a>
@@ -33,21 +30,6 @@
             :key='locale.code'
             :to='switchLocalePath(locale.code)'>{{ locale.name }}
           </NuxtLink> - {{ new Date().getFullYear() }} - <strong>raclette.world</strong>
-          </v-col>
-          <v-col cols='12' sm='2'offset-sm='10'
-          >
-
-            <v-select
-              @change='changeLanguage'
-              dense
-              solo
-              light
-              :items='languages'
-              :value='$i18n.locale'
-              label='Langues'
-            ></v-select>
-          </v-col>
-        </v-row>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -80,18 +62,7 @@ export default {
     availableLocales () {
       return this.$i18n.locales.filter(locale => locale.code !== this.$i18n.locale)
     },
-    languages() {
-      return this.$i18n.locales.map(locale => ({
-        text: locale.name,
-        value: locale.code,
-      }));
-    },
   },
-  methods: {
-    changeLanguage(locale) {
-     this.$router.push(this.switchLocalePath(locale))
-    }
-  }
 };
 </script>
 
