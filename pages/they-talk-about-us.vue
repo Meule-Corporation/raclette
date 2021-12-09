@@ -60,14 +60,6 @@ export default {
       timelineItems: [
         {
           mode: 'card',
-          website: 'BFM TV',
-          img: 'bfm.png',
-          video: 'bfm.mp4',
-          date: '09 Décembre 2021',
-          link: 'https://www.bfmtv.com/'
-        },
-        {
-          mode: 'card',
           website: 'HuffPost',
           img: 'huffpost.png',
           quote: 'Cette “intelligence artificielle post-quantique”, s’amusent les fondateurs du site, peut vous aider à calculer la quantité d’ingrédients à acheter en fonction du nombre de personnes.',
@@ -147,6 +139,14 @@ export default {
           sound: 'france-inter.mp3',
           date: '08 Décembre 2021',
           link: 'https://www.franceinter.fr/'
+        },
+        {
+          mode: 'card',
+          website: 'BFM TV',
+          img: 'bfm.png',
+          video: 'bfm.mp4',
+          date: '09 Décembre 2021',
+          link: 'https://www.bfmtv.com/'
         }
       ].reverse()
     }
