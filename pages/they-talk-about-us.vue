@@ -59,6 +59,11 @@ export default {
     return {
       timelineItems: [
         {
+          mode: 'html',
+          date: '05 Décembre 2021',
+          html: '<blockquote class="twitter-tweet" data-dnt="true"><p lang="fr" dir="ltr">Vous aimez la raclette mais vous ne savez jamais quelle quantité acheter ? 🤌🏼<br><br>La réponse est ici, grâce à « un calculateur basé sur un intelligence post-quantique » 👇🏼<a href="https://t.co/N65YtC2QAa">https://t.co/N65YtC2QAa</a></p>&mdash; Robin Prudent (@robin_prudent) <a href="https://twitter.com/robin_prudent/status/1467443548966502405?ref_src=twsrc%5Etfw">December 5, 2021</a></blockquote>'
+        },
+        {
           mode: 'card',
           website: 'HuffPost',
           img: 'huffpost.png',
