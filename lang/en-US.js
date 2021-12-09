@@ -50,5 +50,35 @@ export default {
   'otherError': "A metaverse disruption created an unexpected error",
   'backToRaclette': "Back to raclette",
   'moreInfos.text': "To know more about the people behind this revolutionary project, click",
-  'moreInfos.link': "here"
+  'moreInfos.link': "here",
+  'they-talk-about-us.title': 'They talk about us',
+  'about-us.card1.title': 'A threesome for artificial inteligence, providing the raclette',
+  'about-us.card1.t1': 'This crazy bet that the 3 co-founders of Raclette.World have set themselves\n' +
+    '    Raclette.World: to put artificial intelligence at the service of raclette.\n' +
+    '    \' of the raclette.',
+  'about-us.card1.t2': " As a result of hundreds of hours of research and development, the three\n" +
+    "                three co-founders have developed a post-quantum AI technology\n" +
+    "                technology based on blockchain in the metaverse. This\n" +
+    "                technology envied by many Silicon Valley companies finally makes it\n" +
+    "                Valley companies, finally makes a raclette calculator of unprecedented\n" +
+    "                to the greatest number of people, a squeegee calculator of unparalleled efficiency.\n" +
+    "\n" +
+    "Translated with www.DeepL.com/Translator (free version)",
+  'value1':'Exigence',
+  'value2':'Quality',
+  'value3':'perseverance',
+  'they-talk-about-us': 'Ils parlent de nous',
+  'citation': '\n' +
+    '                  "72% des français ne connaissent pas les quantités de fromage et\n' +
+    '                  d\'accompagnement nécessaires pour la raclette" - Etude réalisée\n' +
+    '                  par l\'INFEL (Institut National du Fromage et des Etudes\n' +
+    '                  Laitières) - 2021\n' +
+    '                ',
+  'quote1': "« Cet outil est vraiment pratique, même pour les sans-dents.\n" +
+    "                  Niehéééé. »",
+  'quote2': "« Sous prétexte que nous sommes des gens random de Getty\n" +
+    "                  Images, on aurait pas le droit d'utiliser Raclette.World ?\n" +
+    "                  »",
+  'quote3': "« On m'appelle l'OVNI car j'achète toujours pile poil ce\n" +
+    "                  qu'il faut pour les raclettes »"
 }
