@@ -139,6 +139,14 @@ export default {
           sound: 'france-inter.mp3',
           date: '08 Décembre 2021',
           link: 'https://www.franceinter.fr/'
+        },
+        {
+          mode: 'card',
+          website: 'BFM TV',
+          img: 'bfm.png',
+          video: 'bfm.mp4',
+          date: '09 Décembre 2021',
+          link: 'https://www.bfmtv.com/'
         }
       ].reverse()
     }
