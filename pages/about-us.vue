@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12">
-      <h2 class="text-sm-h2 my-6 text-center">Les co-fondateurs</h2>
+      <h2 class="text-sm-h2 my-6 text-center">{{ $t('co-founders') }}</h2>
       <v-row>
         <v-col cols="12" offset='0' sm='10' offset-sm='1'>
           <CardCheese>
@@ -20,7 +20,7 @@
           </CardCheese>
         </v-col>
       </v-row>
-      <h2 class="text-sm-h2 my-6 text-center">Nos valeurs</h2>
+      <h2 class="text-sm-h2 my-6 text-center">{{ $t('our-values') }}</h2>
       <v-row>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
@@ -58,9 +58,7 @@
           </CardCheese>
         </v-col>
       </v-row>
-        <h2 class="text-sm-h2 my-6 text-center">
-          Ils utilisent Raclette.World
-        </h2>
+        <h2 class="text-sm-h2 my-6 text-center">{{ $t('they-use-it') }}</h2>
       <v-row>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
