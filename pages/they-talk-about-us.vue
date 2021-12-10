@@ -152,6 +152,14 @@ export default {
           video: 'bfm.mp4',
           date: '09 Décembre 2021',
           link: 'https://www.bfmtv.com/'
+        },
+        {
+          mode: 'card',
+          website: 'LCI',
+          img: 'lci.svg',
+          video: 'lci.mp4',
+          date: '10 Décembre 2021',
+          link: 'https://twitter.com/LCI/status/1469201817921798146'
         }
       ].reverse()
     }
