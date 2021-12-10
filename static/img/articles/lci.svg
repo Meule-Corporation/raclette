@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="24" viewBox="0 0 62 24">
+  <defs>
+    <linearGradient id="lci-colored-a" x1="0%" x2="99.928%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#111E9B"/>
+      <stop offset="23.9%" stop-color="#002DC0"/>
+      <stop offset="64.4%" stop-color="#7E0839"/>
+      <stop offset="99.928%" stop-color="#C00509"/>
+    </linearGradient>
+    <radialGradient id="lci-colored-b" cx="45.028%" cy="0%" r="88.623%" fx="45.028%" fy="0%" gradientTransform="matrix(0 1 -.48684 0 .45 -.45)">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="99.203%" stop-color="#FFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <polyline fill="url(#lci-colored-a)" fill-rule="nonzero" points="62 0 31.029 0 30.971 0 0 0 0 24 30.971 24 31.029 24 62 24 62 0"/>
+    <path fill="url(#lci-colored-b)" fill-opacity=".7" d="M0,0 L0,17.7965311 C0,17.7965311 24.7375328,6.7743798 62,3.65364614 L62,0 L0,0" opacity=".6"/>
+    <polygon fill="#FFF" fill-rule="nonzero" points="46.637 3.544 52.356 3.544 52.356 20.328 46.637 20.328"/>
+    <polygon fill="#FFF" fill-rule="nonzero" points="20.106 20.328 20.106 15.247 15.535 15.247 15.535 3.544 9.816 3.544 9.816 20.328"/>
+    <path fill="#FFF" fill-rule="nonzero" d="M37.9515493,9.60969231 C37.0514659,8.68438945 35.830493,8.17201019 34.5624481,8.18746154 C32.585621,8.18746154 30.9309501,9.62838462 30.9309501,11.9296154 C30.9309501,14.3423077 32.6789706,15.7555385 34.7629603,15.7555385 C35.8750368,15.7830527 36.9510094,15.3458185 37.7483636,14.5423846 L40.3692804,18.6069231 C38.7473598,20.1461538 36.8620999,20.7761538 34.2518771,20.7761538 C29.2190218,20.7761538 25.3642868,17.2377692 25.3642868,11.9360769 C25.3642868,6.63438462 29.1501793,3.096 34.1828118,3.096 C36.5132087,3.096 38.7277542,3.702 40.3002151,5.19369231 L37.9515493,9.60969231 Z"/>
+  </g>
+</svg>
