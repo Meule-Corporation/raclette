@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from '@nuxt/bridge'
+import { defineNuxtConfig } from '@nuxt/bridge';
 
 export default defineNuxtConfig({
   env: {
@@ -9,38 +9,61 @@ export default defineNuxtConfig({
   target: 'static',
   ssr: false,
   generate: {
-    fallback: true
+    fallback: true,
   },
   bridge: {
-    nitro: false
+    nitro: false,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
-    title: 'Raclette.World: Les quantités de raclette, par l\'IA',
+    title: "Raclette.World: Les quantités de raclette, par l'IA",
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid:'twitter:site', name:'twitter:site', content:'@RacletteW'},
-      {hid:'twitter:card', name:'twitter:card', content:'summary'},
-      {hid: 'description', name: 'description', content: "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
-      {hid: 'og:description', name: 'og:description', content: "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre."},
-      {hid: 'og:title', name: 'og:title', content: "Raclette.World: Les quantités de raclette, par l'IA"},
-      {hid: 'og:site_name', name: 'og:site_name', content: "Raclette.World: Les quantités de raclette, par l'IA"},
-      {hid: 'og:image', name: 'og:image', content: "https://raclette.world/icon.png"},
-      {name: 'format-detection', content: 'telephone=no'},
-      {name: 'google-site-verification', content: '4HAdqAwqavgSyg5VihoVVCtvL4_YBAvCFlrLuRs9U_I'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@RacletteW' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre.",
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content:
+          "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre.",
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: "Raclette.World: Les quantités de raclette, par l'IA",
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: "Raclette.World: Les quantités de raclette, par l'IA",
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://raclette.world/icon.png',
+      },
+      { name: 'format-detection', content: 'telephone=no' },
+      {
+        name: 'google-site-verification',
+        content: '4HAdqAwqavgSyg5VihoVVCtvL4_YBAvCFlrLuRs9U_I',
+      },
     ],
-    link: [
-      {rel: 'icon', type: 'image/svg', href: '/logo.svg'}
-    ],
+    link: [{ rel: 'icon', type: 'image/svg', href: '/logo.svg' }],
     script: [
       {
-        src: "/anal/ytics.js",
+        src: '/anal/ytics.js',
         defer: true,
-        "data-domain": "raclette.world",
-        "data-api": "/anal/ytics/api/event"
+        'data-domain': 'raclette.world',
+        'data-api': '/anal/ytics/api/event',
       },
     ],
   },
@@ -52,7 +75,7 @@ export default defineNuxtConfig({
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     // https://vueuse.org/guide/
-    '@vueuse/core/nuxt'
+    '@vueuse/core/nuxt',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -61,34 +84,49 @@ export default defineNuxtConfig({
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     breakpoint: {
-      mobileBreakpoint: 'xs'
+      mobileBreakpoint: 'xs',
     },
   },
 
   i18n: {
-    locales: [{
-      code: 'fr',
-      file: 'fr-FR.js'
-    }],
     defaultLocale: 'fr',
     lazy: true,
     langDir: 'lang/',
+    fallbackLocale: 'fr',
+    skipSettingLocaleOnNavigate: false,
+    detectBrowserLanguage: {
+      useCookie: false,
+    },
     vueI18n: {
-      fallbackLocale: 'fr'
-    }
+      fallbackLocale: 'fr',
+    },
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js',
+        name: 'English',
+        iso: 'en-US',
+      },
+      {
+        code: 'fr',
+        file: 'fr-FR.js',
+        iso: 'fr-FR',
+        name: 'Français',
+      },
+    ],
   },
-})
+});

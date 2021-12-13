@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!--    header -->
-    <NuxtLink to="/">
+    <NuxtLink :to="localePath('/')">
       <v-app-bar
         app
         absolute
