@@ -26,6 +26,7 @@
     "@vueuse/core": "^6.9.2",
     "core-js": "^3.15.1",
     "nuxt-edge": "latest",
+    "ol": "^6.9.0",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
