@@ -12,7 +12,7 @@ export function calculateResults({
   return [
     ...food.map((aliment) => ({
       ...aliment,
-      quantity: aliment.portions * quantity * capacity,
+      quantity: ( aliment.portions * quantity * capacity ) / food.length,
     })),
     {
       ...RACLETTE_CHEESE,
