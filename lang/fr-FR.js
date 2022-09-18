@@ -67,5 +67,8 @@ export default {
   "what-eat.base": "Les classiques",
   "what-eat.extra": "Les extras",
   "who-eat": "Qui mange ?",
+  "origin1": "Tout a commencé dans un garage...",
+  "origin2": "Dans la ville de Lyon...",
+  "our-origins": "Nos origines",
   "pain": "Pain",
 }

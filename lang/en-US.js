@@ -68,4 +68,7 @@ export default {
   "what-eat.extra": "Extras",
   "who-eat": "Who is eating ?",
   "pain": "Bread",
+  "origin1": "It all started in some garage...",
+  "origin2": "In Lyon city...",
+  "our-origins": "Our origins"
 }
