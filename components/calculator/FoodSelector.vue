@@ -11,7 +11,7 @@
     >
       <div>
       <v-avatar left rounded>
-        <v-img :src="`food/${food.id}.svg`" />
+        <v-img :src="`/food/${food.id}.svg`" />
       </v-avatar>
       </div>
       {{ $t(food.id) }}

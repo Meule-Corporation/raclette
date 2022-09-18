@@ -94,12 +94,18 @@ export default defineNuxtConfig({
     },
   },
 
+  css: [
+    '@/assets/main.css',
+    '@/assets/mdi.css',
+  ],
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     breakpoint: {
       mobileBreakpoint: 'xs',
     },
+    defaultAssets: false
   },
 
   i18n: {

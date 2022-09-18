@@ -32,9 +32,8 @@
         <NuxtLink
           v-for='locale in availableLocales'
           :key='locale.code'
-          :to='switchLocalePath(locale.code)'>{{ locale.name }}
-        </NuxtLink>
-        - {{ new Date().getFullYear() }} - <strong>raclette.world</strong>
+          :to='switchLocalePath(locale.code)'>{{ locale.name }}</NuxtLink>
+        - <span>{{ new Date().getFullYear() }}</span> - <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
   </v-footer>
