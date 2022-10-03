@@ -24,22 +24,39 @@
       <v-row>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
-            <v-img class="white--text align-end" src="/img/1.jpg">
+            <v-img class="white--text align-end" src="/img/values/1.jpg">
               <v-card-title>{{ $t('value1') }}</v-card-title>
             </v-img>
           </CardCheese>
           </v-col>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
-            <v-img class="white--text align-end" src="/img/3.jpg">
+            <v-img class="white--text align-end" src="/img/values/3.jpg">
               <v-card-title>{{ $t('value2') }}</v-card-title>
             </v-img>
           </CardCheese>
         </v-col>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
-            <v-img class="white--text align-end" src="/img/2.jpg">
+            <v-img class="white--text align-end" src="/img/values/2.jpg">
               <v-card-title>{{ $t('value3') }}</v-card-title>
+            </v-img>
+          </CardCheese>
+        </v-col>
+      </v-row>
+      <h2 class="text-sm-h2 my-6 text-center">{{ $t('our-origins') }}</h2>
+      <v-row>
+        <v-col cols="12" sm='6'>
+          <CardCheese class='mb-4'>
+            <v-img class="white--text" src="/img/origins/garage.jpg">
+              <v-card-title>{{ $t('origin1') }}</v-card-title>
+            </v-img>
+          </CardCheese>
+        </v-col>
+        <v-col cols="12" sm='6'>
+          <CardCheese class='mb-4'>
+            <v-img class="white--text" src="/img/origins/lyon.jpg">
+              <v-card-title>{{ $t('origin2') }}</v-card-title>
             </v-img>
           </CardCheese>
         </v-col>
@@ -62,7 +79,7 @@
       <v-row>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
-            <v-img class="white--text align-end" src="/img/4.jpg">
+            <v-img class="white--text align-end" src="/img/they-use-it/4.jpg">
               <v-card-title>François Hollande</v-card-title>
             </v-img>
             <v-card-text class="text--primary">
@@ -76,7 +93,7 @@
         </v-col>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
-            <v-img class="white--text align-end" src="/img/5.jpg">
+            <v-img class="white--text align-end" src="/img/they-use-it/5.jpg">
               <v-card-title>Des gens random</v-card-title>
             </v-img>
             <v-card-text class="text--primary" min-height="100%">
@@ -90,7 +107,7 @@
         </v-col>
         <v-col cols="12" sm='4'>
           <CardCheese class='mb-4'>
-            <v-img class="white--text align-end" src="/img/6.jpg">
+            <v-img class="white--text align-end" src="/img/they-use-it/6.jpg">
               <v-card-title>Jul</v-card-title>
             </v-img>
             <v-card-text class="text--primary">
