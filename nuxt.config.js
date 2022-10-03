@@ -28,23 +28,23 @@ export default defineNuxtConfig({
         hid: 'description',
         name: 'description',
         content:
-          "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre.",
+          "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Le temps où vous vous demandiez quelle quantité de fromage à raclette par personne est révolu.",
       },
       {
         hid: 'og:description',
         name: 'og:description',
         content:
-          "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Découvrez ce projet et rejoignez l'aventure pour apporter cette révolution au plus grand nombre.",
+          "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-qantique. Le temps où vous vous demandiez quelle quantité de fromage à raclette par personne est révolu.",
       },
       {
         hid: 'og:title',
         name: 'og:title',
-        content: "Raclette.World: Les quantités de raclette, par l'IA",
+        content: "Raclette.World: Quelle quantité de raclette par personne ?",
       },
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: "Raclette.World: Les quantités de raclette, par l'IA",
+        content: "Raclette.World: Quelle quantité de raclette par personne ?",
       },
       {
         hid: 'og:image',

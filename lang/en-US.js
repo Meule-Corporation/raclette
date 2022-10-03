@@ -32,7 +32,7 @@ export default {
   "day": "day | days",
   "footer.about-us.link": "About",
   "footer.contact-us.link": "Contact us",
-  "footer.description": "Raclette.World is the first raclette calculator, based on an artificial intelligence post-quantum. Discover this project and join the adventure to bring this revolution to as many people as possible.",
+  "footer.description": "Raclette.World is the first raclette calculator, based on an artificial intelligence post-quantum. The days of wondering how much raclette cheese per person are over.",
   "footer.they-talk-about-us.link": "They talk about us",
   "grison": "Bündnerfleisch",
   "hour": "hour | hours",
