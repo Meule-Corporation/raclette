@@ -57,6 +57,10 @@ export default {
         link: 'https://www.linkedin.com/company/raclette-world',
       },
       {
+        text: 'mdi-github',
+        link: 'https://github.com/Meule-Corporation/raclette',
+      },
+      {
         text: 'mdi-instagram',
         link: '',
       },
