@@ -66,5 +66,6 @@ export default {
   "what-eat": "What do you eat with raclette",
   "what-eat.base": "Classics",
   "what-eat.extra": "Extras",
-  "who-eat": "Who is eating ?"
+  "who-eat": "Who is eating ?",
+  "pain": "Bread",
 }
