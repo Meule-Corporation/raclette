@@ -133,4 +133,12 @@ export const food = [
     isVegeFriendly: true,
     kcal: 27,
   },
+  {
+    type: 'extra',
+    id: 'pain',
+    portions: 100,
+    unit: units.GRAMS,
+    isVegeFriendly: true,
+    kcal: 276,
+  }
 ];
