@@ -39,7 +39,7 @@ export const food = [
   {
     type: 'base',
     id: 'jambon-blanc',
-    portions: 1,
+    portions: 5,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 50,
@@ -47,7 +47,7 @@ export const food = [
   {
     type: 'base',
     id: 'bacon',
-    portions: 4,
+    portions: 20,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 44,
@@ -55,7 +55,7 @@ export const food = [
   {
     type: 'base',
     id: 'chorizo',
-    portions: 4,
+    portions: 20,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 70,
@@ -63,7 +63,7 @@ export const food = [
   {
     type: 'base',
     id: 'coppa',
-    portions: 3,
+    portions: 15,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 75,
@@ -71,7 +71,7 @@ export const food = [
   {
     type: 'base',
     id: 'jambon-cru',
-    portions: 1,
+    portions: 5,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 50,
@@ -79,7 +79,7 @@ export const food = [
   {
     type: 'base',
     id: 'grison',
-    portions: 3,
+    portions: 15,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 50,
@@ -87,7 +87,7 @@ export const food = [
   {
     type: 'base',
     id: 'rosette',
-    portions: 3,
+    portions: 15,
     unit: units.SLICE,
     isVegeFriendly: false,
     kcal: 120,
@@ -95,7 +95,7 @@ export const food = [
   {
     type: 'base',
     id: 'patate',
-    portions: 280,
+    portions: 1400,
     unit: units.GRAMS,
     isVegeFriendly: true,
     kcal: 215,
@@ -104,7 +104,7 @@ export const food = [
   {
     type: 'extra',
     id: 'cornichon',
-    portions: 5,
+    portions: 25,
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 1,
@@ -112,7 +112,7 @@ export const food = [
   {
     type: 'extra',
     id: 'oignon-rouge',
-    portions: 0.5,
+    portions: 2.5,
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 20,
@@ -120,7 +120,7 @@ export const food = [
   {
     type: 'extra',
     id: 'mushrooms',
-    portions: 1.2,
+    portions: 6.0,
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 20,
@@ -128,7 +128,7 @@ export const food = [
   {
     type: 'extra',
     id: 'lettuce',
-    portions: 100,
+    portions: 500,
     unit: units.GRAMS,
     isVegeFriendly: true,
     kcal: 27,
