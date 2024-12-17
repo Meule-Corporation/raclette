@@ -160,6 +160,14 @@ export default {
           video: 'lci.mp4',
           date: '10 Décembre 2021',
           link: 'https://twitter.com/LCI/status/1469201817921798146'
+        },
+        {
+          mode: 'card',
+          website: 'France 2 - TLMVPSP',
+          img: 'nagui-soutien-aux-chevals.png',
+          video: 'tlmvpsp.mp4',
+          date: '15 Décembre 2024',
+          link: 'https://www.france.tv/'
         }
       ].reverse()
     }
