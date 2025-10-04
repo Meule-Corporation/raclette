@@ -156,5 +156,13 @@ export const food = [
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 75,
+  },
+  {
+    type: 'extra',
+    id: 'courgette',
+    portions: 1,
+    unit: units.ITEM,
+    isVegeFriendly: true,
+    kcal: 24,
   }
 ];
