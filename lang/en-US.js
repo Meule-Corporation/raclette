@@ -69,4 +69,5 @@ export default {
   "who-eat": "Who is eating ?",
   "pain": "Bread",
   "bell-pepper": "Bell pepper",
+  "eggplant": "Eggplant",
 }

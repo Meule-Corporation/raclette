@@ -69,4 +69,5 @@ export default {
   "who-eat": "Qui mange ?",
   "pain": "Pain",
   "bell-pepper": "Poivron",
+  "eggplant": "Aubergine",
 }
