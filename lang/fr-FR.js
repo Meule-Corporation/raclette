@@ -68,4 +68,5 @@ export default {
   "what-eat.extra": "Les extras",
   "who-eat": "Qui mange ?",
   "pain": "Pain",
+  "bell-pepper": "Poivron",
 }
