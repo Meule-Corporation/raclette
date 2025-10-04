@@ -148,5 +148,13 @@ export const food = [
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 40,
+  },
+  {
+    type: 'extra',
+    id: 'eggplant',
+    portions: 1,
+    unit: units.ITEM,
+    isVegeFriendly: true,
+    kcal: 75,
   }
 ];
