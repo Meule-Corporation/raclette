@@ -68,7 +68,7 @@ export default {
   "what-eat.extra": "Extras",
   "who-eat": "Who is eating ?",
   "pain": "Bread",
-  "bell-pepper": "Bell pepper",
-  "eggplant": "Eggplant",
+  "poivron": "Bell pepper",
+  "aubergine": "Eggplant",
   "cougette": "Zucchini",
 }

@@ -143,7 +143,7 @@ export const food = [
   },
   {
     type: 'extra',
-    id: 'bell-pepper',
+    id: 'poivron',
     portions: 2,
     unit: units.ITEM,
     isVegeFriendly: true,
@@ -151,7 +151,7 @@ export const food = [
   },
   {
     type: 'extra',
-    id: 'eggplant',
+    id: 'aubergine',
     portions: 1,
     unit: units.ITEM,
     isVegeFriendly: true,
