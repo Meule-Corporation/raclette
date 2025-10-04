@@ -152,7 +152,7 @@ export const food = [
   {
     type: 'extra',
     id: 'aubergine',
-    portions: 1,
+    portions: 0.5,
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 75,
@@ -160,7 +160,7 @@ export const food = [
   {
     type: 'extra',
     id: 'courgette',
-    portions: 1,
+    portions: 0.5,
     unit: units.ITEM,
     isVegeFriendly: true,
     kcal: 24,
