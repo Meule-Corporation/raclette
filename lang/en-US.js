@@ -70,4 +70,5 @@ export default {
   "pain": "Bread",
   "bell-pepper": "Bell pepper",
   "eggplant": "Eggplant",
+  "cougette": "Zucchini",
 }
