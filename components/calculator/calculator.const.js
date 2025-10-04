@@ -140,5 +140,13 @@ export const food = [
     unit: units.GRAMS,
     isVegeFriendly: true,
     kcal: 276,
+  },
+  {
+    type: 'extra',
+    id: 'bell-pepper',
+    portions: 2,
+    unit: units.ITEM,
+    isVegeFriendly: true,
+    kcal: 40,
   }
 ];
