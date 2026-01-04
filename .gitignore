@@ -80,6 +80,7 @@ dist
 
 # IDE / Editor
 .idea
+*.iml
 
 # Service worker
 sw.*

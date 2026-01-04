@@ -19,6 +19,16 @@
       </v-card-text>
 
       <v-divider></v-divider>
+      <a href="https://www.exoscale.com/">
+        <v-row justify="center" align="center">
+          {{ $t('footer.host.description') }}
+          <v-img
+            max-width="100"
+            src='img/exoscale-RGB-logo-fullcolor.svg'
+          />
+        </v-row>
+      </a>
+      <v-divider></v-divider>
 
       <v-card-text class="black--text">
         <a href="mailto:contact@raclette.world">{{
@@ -32,7 +42,8 @@
         <NuxtLink
           v-for='locale in availableLocales'
           :key='locale.code'
-          :to='switchLocalePath(locale.code)'>{{ locale.name }}</NuxtLink>
+          :to='switchLocalePath(locale.code)'>{{ locale.name }}
+        </NuxtLink>
         - <span>{{ new Date().getFullYear() }}</span> - <strong>raclette.world</strong>
       </v-card-text>
     </v-card>

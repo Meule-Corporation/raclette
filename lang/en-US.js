@@ -6,6 +6,7 @@ export default {
   "about-us.card1.t1": "This crazy bet that the 3 co-founders of Raclette.World have set themselves: to put artificial intelligence at the service of raclette.",
   "about-us.card1.t2": "As a result of hundreds of hours of research and development, the three three co-founders have developed a post-quantum AI technology based on blockchain in the metaverse. This technology envied by many Silicon Valley companies finally makes a raclette calculator of unprecedented and unparalleled efficiency.",
   "about-us.card1.title": "A threesome for artificial intelligence, providing the raclette",
+  "footer.host.description": "AI infrastructure powered by ",
   "adult": "Adult | Adult | Adults",
   "backToRaclette": "Back to raclette",
   "bacon": "Bacon",

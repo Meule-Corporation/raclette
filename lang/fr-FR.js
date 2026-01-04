@@ -30,7 +30,7 @@ export default {
   "coppa": "Coppa",
   "cornichon": "Cornichons",
   "day": "jour | jours",
-  "footer.about-us.link": "À propos",
+  "footer.host.description": "Infrastructure IA fournie par ",
   "footer.contact-us.link": "Nous contacter",
   "footer.description": "Raclette.World est le premier calculateur de raclette basé sur une intelligence artificielle post-quantique. Le temps où vous vous demandiez quelle quantité de fromage à raclette par personne est révolu.",
   "footer.they-talk-about-us.link": "Ils parlent de nous",
