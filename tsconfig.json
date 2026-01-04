@@ -1,35 +1,3 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM"
-    ],
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "noEmit": true,
-    "experimentalDecorators": true,
-    "baseUrl": ".",
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/axios",
-      "@types/node",
-      "@nuxtjs/i18n"
-    ]
-  },
-  "vueCompilerOptions": {
-    "experimentalCompatMode": 2,
-  },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist",
-    ".output"
-  ]
+  "extends": "./.nuxt/tsconfig.json"
 }

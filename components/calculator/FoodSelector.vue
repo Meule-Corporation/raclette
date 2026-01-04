@@ -1,47 +1,41 @@
 <template>
   <div class="ma-2">
     <v-chip
-        v-for="food in availableFoods"
-        :key="food.id"
-        class="ma-1"
-        color="yellow lighter-2"
-        x-large
-        :outlined="!selectedFoods.includes(food)"
-        @click="$emit('food-clicked', food)"
+      v-for="food in availableFoods"
+      :key="food.id"
+      class="ma-1"
+      color="yellow-lighten-2"
+      size="x-large"
+      :variant="selectedFoods.includes(food) ? 'flat' : 'outlined'"
+      @click="$emit('food-clicked', food)"
     >
-      <div>
-      <v-avatar left rounded>
-        <v-img :src="`/food/${food.id}.svg`" />
-      </v-avatar>
-      </div>
+      <template #prepend>
+        <v-avatar start rounded>
+          <v-img :src="`/food/${food.id}.svg`" />
+        </v-avatar>
+      </template>
       {{ $t(food.id) }}
     </v-chip>
   </div>
 </template>
 
-<script>
-export default {
-  name: "FoodSelector",
-  props: {
-    label: {
-      type: String,
-      default: ''
-    },
-    availableFoods: {
-      type: Array,
-      default: () => []
-    },
-    selectedFoods: {
-      type: Array,
-      default: () => []
-    }
+<script setup>
+defineProps({
+  label: {
+    type: String,
+    default: ''
   },
-  data() {
-    return {
-      selectedItems: []
-    }
+  availableFoods: {
+    type: Array,
+    default: () => []
+  },
+  selectedFoods: {
+    type: Array,
+    default: () => []
   }
-}
+})
+
+defineEmits(['food-clicked'])
 </script>
 
 <style>

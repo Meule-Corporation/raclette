@@ -4,25 +4,24 @@
     <v-row class="my-4 justify-center flex-nowrap">
       <v-slider
         v-model="hungriness"
-        color="grey darken-2"
-        track-color="yellow lighter-2"
-        height='32'
+        color="grey-darken-2"
+        track-color="yellow-lighten-2"
         :min="0.7"
         :max="1.3"
         :step="0.01"
         hide-details
-        @input="$emit('capacity-updated', hungriness)"
+        @update:model-value="$emit('capacity-updated', hungriness)"
       >
         <template #prepend>
           <v-img
             max-width="50"
-            src='img/moineau.png'
+            src="/img/moineau.png"
           />
         </template>
         <template #append>
           <v-img
-              max-width="50"
-            src='img/loup.png'
+            max-width="50"
+            src="/img/loup.png"
           />
         </template>
       </v-slider>
@@ -30,28 +29,25 @@
   </v-col>
 </template>
 
-<script>
-export default {
-  name: 'CapacitySlider',
-  data() {
-    return {
-      hungriness: 1,
-    };
-  },
-};
+<script setup>
+import { ref } from 'vue'
+
+const hungriness = ref(1)
+
+defineEmits(['capacity-updated'])
 </script>
 
 <style scoped>
->>>.v-slider__thumb {
+:deep(.v-slider__thumb) {
   height: 20px;
   width: 20px;
 }
 
->>> .v-slider--horizontal .v-slider__track-container {
+:deep(.v-slider--horizontal .v-slider__track-container) {
   height: 10px;
 }
 
->>> .v-slider__thumb::before {
+:deep(.v-slider__thumb::before) {
   left: -9px;
   top: -9px;
 }

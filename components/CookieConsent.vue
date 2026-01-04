@@ -3,25 +3,21 @@
     v-model="show"
     vertical
     :timeout="-1"
-    outlined
-    rounded
-    bottom
-    :right='!isMobile'
-    :transition="transition"
+    :location="isMobile ? 'bottom' : 'bottom end'"
   >
     <span class="cookie-consent-message">
       {{ $t('cookie.message') }}
     </span>
 
-    <template v-slot:action="{ attrs }">
+    <template #actions>
       <v-row no-gutters>
         <v-col>
-          <ButtonCheese v-bind="attrs" size="x-small" class="ma-2" @click="leave">
+          <ButtonCheese size="x-small" class="ma-2" @click="leave">
             {{ $t('cookie.refuse') }}
           </ButtonCheese>
         </v-col>
         <v-col>
-          <ButtonCheese v-bind="attrs" size="x-small" class="ma-2" @click="dismiss">
+          <ButtonCheese size="x-small" class="ma-2" @click="dismiss">
             {{ $t('cookie.accept') }}
           </ButtonCheese>
         </v-col>
@@ -30,53 +26,42 @@
   </v-snackbar>
 </template>
 
-<script>
-import ButtonCheese from '@/components/ButtonCheese';
+<script setup>
+import { ref, computed, onBeforeMount } from 'vue'
+import { useDisplay } from 'vuetify'
 
-export default {
-  name: 'CookieConsent',
-  components: { ButtonCheese },
-  data() {
-    return {
-      show: undefined,
-    };
-  },
-  computed: {
-    cookie() {
-      return !this.getCookie('cookie_a_la_raclette');
-    },
-    isMobile() {
-      return this.$vuetify.breakpoint.mobile;
-    },
-    transition() {
-      return this.isMobile ? 'slide-y-reverse-transition' : 'fade-transition';
-    }
-  },
-  beforeMount() {
-    setTimeout(() => {
-      this.show = this.cookie;
-    }, 1000);
-  },
-  methods: {
-    dismiss() {
-      this.show = false;
-      const exdate = new Date();
-      exdate.setDate(exdate.getDate() + 365);
-      const cookie = [
-        `cookie_a_la_raclette=1`,
-        `expires=${exdate.toUTCString()}`,
-        `path=/`,
-      ];
-      document.cookie = cookie.join(';');
-    },
-    getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      return parts.length !== 2 ? undefined : parts.pop().split(';').shift();
-    },
-    leave() {
-      window.open('https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx', '_blank');
-    },
-  },
-};
+const { mobile } = useDisplay()
+const show = ref(undefined)
+
+const isMobile = computed(() => mobile.value)
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  return parts.length !== 2 ? undefined : parts.pop().split(';').shift()
+}
+
+const cookie = computed(() => !getCookie('cookie_a_la_raclette'))
+
+onBeforeMount(() => {
+  setTimeout(() => {
+    show.value = cookie.value
+  }, 1000)
+})
+
+function dismiss() {
+  show.value = false
+  const exdate = new Date()
+  exdate.setDate(exdate.getDate() + 365)
+  const cookieValue = [
+    `cookie_a_la_raclette=1`,
+    `expires=${exdate.toUTCString()}`,
+    `path=/`,
+  ]
+  document.cookie = cookieValue.join(';')
+}
+
+function leave() {
+  window.open('https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx', '_blank')
+}
 </script>

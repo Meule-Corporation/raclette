@@ -1,56 +1,42 @@
 <template>
   <v-app>
-    <!--    header -->
     <NuxtLink :to="localePath('/')">
       <v-app-bar
-        app
-        absolute
         flat
         color="white"
-        prominent
-        src="/raclette-party.jpg"
+        height="128"
+        image="/raclette-party.jpg"
       >
       </v-app-bar>
     </NuxtLink>
 
     <v-main>
       <v-container class="fill-height">
-        <Nuxt />
+        <slot />
       </v-container>
     </v-main>
 
-    <!--    footer -->
     <Foot />
-
-    <!--    This is a snackbar -->
     <CookieConsent />
   </v-app>
 </template>
 
-<script>
-import Foot from '@/components/Foot';
-import CookieConsent from '@/components/CookieConsent';
+<script setup>
+const { locale } = useI18n()
+const route = useRoute()
+const localePath = useLocalePath()
 
-export default {
-  name: 'Default',
-  components: {
-    CookieConsent,
-    Foot,
+useHead({
+  htmlAttrs: {
+    lang: locale.value,
   },
-  head() {
-    return {
-      htmlAttrs: {
-        lang: this.$i18n.locale,
-      },
-      link: [
-        {
-          rel: 'canonical',
-          href: 'https://raclette.world' + this.$route.path,
-        },
-      ],
-    };
-  },
-};
+  link: [
+    {
+      rel: 'canonical',
+      href: computed(() => 'https://raclette.world' + route.path),
+    },
+  ],
+})
 </script>
 
 <style scoped>

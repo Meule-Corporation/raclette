@@ -1,6 +1,6 @@
 <template>
-  <v-footer dark padless app absolute>
-    <v-card flat tile class="yellow lighten-2 black--text text-center">
+  <v-footer class="bg-yellow-lighten-2">
+    <v-card flat class="bg-yellow-lighten-2 text-black text-center w-100">
       <v-card-text>
         <v-btn
           v-for="(icon, i) in icons"
@@ -10,11 +10,11 @@
           target="_blank"
           icon
         >
-          <v-icon size="24px" color="black">{{ icon.text }}</v-icon>
+          <v-icon size="24" color="black">{{ icon.text }}</v-icon>
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="pt-0 black--text">
+      <v-card-text class="pt-0 text-black">
         {{ $t('footer.description') }}
       </v-card-text>
 
@@ -30,59 +30,55 @@
       </a>
       <v-divider></v-divider>
 
-      <v-card-text class="black--text">
+      <v-card-text class="text-black">
         <a href="mailto:contact@raclette.world">{{
-            $t('footer.contact-us.link')
-          }}</a>
+          $t('footer.contact-us.link')
+        }}</a>
         -
         <NuxtLink :to="localePath('/about-us')">{{ $t('footer.about-us.link') }}</NuxtLink>
         -
         <NuxtLink :to="localePath('/they-talk-about-us')">{{ $t('footer.they-talk-about-us.link') }}</NuxtLink>
         -
         <NuxtLink
-          v-for='locale in availableLocales'
-          :key='locale.code'
-          :to='switchLocalePath(locale.code)'>{{ locale.name }}
-        </NuxtLink>
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+        >{{ locale.name }}</NuxtLink>
         - <span>{{ new Date().getFullYear() }}</span> - <strong>raclette.world</strong>
       </v-card-text>
     </v-card>
   </v-footer>
 </template>
 
-<script>
-export default {
-  name: 'Foot',
-  data: () => ({
-    icons: [
-      {
-        text: 'mdi-facebook',
-        link: 'https://www.facebook.com/raclette.world',
-      },
-      {
-        text: 'mdi-twitter',
-        link: 'https://twitter.com/RacletteW',
-      },
-      {
-        text: 'mdi-linkedin',
-        link: 'https://www.linkedin.com/company/raclette-world',
-      },
-      {
-        text: 'mdi-github',
-        link: 'https://github.com/Meule-Corporation/raclette',
-      },
-      {
-        text: 'mdi-instagram',
-        link: '',
-      },
-    ].filter((icon) => icon.link),
-  }),
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales.filter(locale => locale.code !== this.$i18n.locale)
-    },
+<script setup>
+import { computed } from 'vue'
+
+const { locales, locale } = useI18n()
+const localePath = useLocalePath()
+const switchLocalePath = useSwitchLocalePath()
+
+const icons = [
+  {
+    text: 'mdi-facebook',
+    link: 'https://www.facebook.com/raclette.world',
   },
-};
+  {
+    text: 'mdi-twitter',
+    link: 'https://twitter.com/RacletteW',
+  },
+  {
+    text: 'mdi-linkedin',
+    link: 'https://www.linkedin.com/company/raclette-world',
+  },
+  {
+    text: 'mdi-github',
+    link: 'https://github.com/Meule-Corporation/raclette',
+  },
+].filter((icon) => icon.link)
+
+const availableLocales = computed(() =>
+  locales.value.filter((l) => l.code !== locale.value)
+)
 </script>
 
 <style scoped>

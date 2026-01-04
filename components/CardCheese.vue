@@ -1,16 +1,13 @@
 <template>
-  <v-card v-bind="$attrs" :elevation='0' class="card-cheese" rounded="xl" color='yellow lighten-2' v-on="$listeners">
-    <template v-for="(index, name) in $scopedSlots" #[name]="data">
-      <slot :name="name" v-bind="data"></slot>
+  <v-card v-bind="$attrs" :elevation="0" class="card-cheese" rounded="xl" color="yellow-lighten-2">
+    <template v-for="(_, name) in $slots" #[name]="slotData">
+      <slot :name="name" v-bind="slotData || {}"></slot>
     </template>
-    <slot></slot>
   </v-card>
 </template>
 
-<script>
-export default {
-  name: "CardCheese"
-}
+<script setup>
+defineOptions({ inheritAttrs: true })
 </script>
 
 <style scoped>

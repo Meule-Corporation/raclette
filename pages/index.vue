@@ -7,27 +7,25 @@
   </v-row>
 </template>
 
-<script>
-import colors from 'vuetify/lib/util/colors'
-import Calculator from '@/components/calculator/Calculator'
-import CheeseTitle from '@/components/CheeseTitle'
+<script setup>
+import { onMounted } from 'vue'
+import { useTheme } from 'vuetify'
 
-export default {
-  name: 'Index',
-  components: { Calculator, CheeseTitle },
-  mounted() {
-    console.log("%c \n" +
-    "         _--\"-.\n" +
-    "      .-\"      \"-.\n" +
-    "     |\"\"--..      '-.\n" +
-    "     |      \"\"--..   '-.\n" +
-    "     |.-. .-\".    \"\"--..\".\n" +
-    "     |'./  -_'  .-.      |\n" +
-    "     |      .-. '.-'   .-'\n" +
-    "     '--..  '.'    .-  -.\n" +
-    "          \"\"--..   '_'   :\n" +
-    "                \"\"--..   |\n" +
-    "                      \"\"-'\n Join us by contacting us at careers@raclette.world", 'color: ' + colors.yellow.darken2)
-  }
-}
+const theme = useTheme()
+
+onMounted(() => {
+  const yellowColor = theme.current.value.colors?.['yellow-darken-2'] || '#FBC02D'
+  console.log("%c \n" +
+  "         _--\"-.\n" +
+  "      .-\"      \"-.\n" +
+  "     |\"\"--..      '-.\n" +
+  "     |      \"\"--..   '-.\n" +
+  "     |.-. .-\".    \"\"--..\".\n" +
+  "     |'./  -_'  .-.      |\n" +
+  "     |      .-. '.-'   .-'\n" +
+  "     '--..  '.'    .-  -.\n" +
+  "          \"\"--..   '_'   :\n" +
+  "                \"\"--..   |\n" +
+  "                      \"\"-'\n Join us by contacting us at careers@raclette.world", 'color: ' + yellowColor)
+})
 </script>

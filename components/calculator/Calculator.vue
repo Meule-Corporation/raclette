@@ -32,8 +32,8 @@
           <v-switch
             v-model="isUserVege"
             :label="$t('calculator.form.isUserVege')"
-            color="yellow lighter-2"
-            @change="removeVegeSelectedItems"
+            color="yellow-lighten-2"
+            @update:model-value="removeVegeSelectedItems"
           ></v-switch>
         </div>
 
@@ -87,126 +87,103 @@
   </v-row>
 </template>
 
-<script>
-// Common components
-import ButtonCheese from '@/components/ButtonCheese';
-import LoadingCheese from '@/components/LoadingCheese';
-// Calculator components
-import NumberOfPeoplePicker from '@/components/calculator/NumberOfPeoplePicker';
-import FoodSelector from '@/components/calculator/FoodSelector';
-import CalculationResults from '@/components/calculator/CalculationResults';
-import CapacitySlider from '@/components/calculator/CapacitySlider';
-
-// Helpers
-import { useStorage } from '@vueuse/core';
+<script setup>
+import { ref, computed } from 'vue'
+import { useStorage } from '@vueuse/core'
 import {
   states,
   food,
-} from '@/components/calculator/calculator.const';
-import { getLoadingTimes } from '@/components/calculator/calculator.methods';
-import { calculateResults } from '@/components/calculator/calculator.computed';
+} from '@/components/calculator/calculator.const'
+import { getLoadingTimes } from '@/components/calculator/calculator.methods'
+import { calculateResults } from '@/components/calculator/calculator.computed'
 
-export default {
-  name: 'Calculator',
-  components: {
-    CapacitySlider,
-    CalculationResults,
-    LoadingCheese,
-    ButtonCheese,
-    NumberOfPeoplePicker,
-    FoodSelector,
-  },
-  data() {
-    return {
-      usageCount: 0,
-      isUserVege: false,
-      formData: this.getInitalFormData(),
-      // One of INITIAL, LOADING_RESULTS, DISPLAY_RESULTS
-      state: states.INITIAL,
-      statesEnum: states,
-    };
-  },
-  computed: {
-    submitButtonDisabled() {
-      return !(
-        (this.formData.numberOfAdults > 0 ||
-          this.formData.numberOfChildren > 0) &&
-        this.formData.food.length > 0
-      );
-    },
-    clearButtonDisabled() {
-      return (
-        JSON.stringify(this.formData) ===
-        JSON.stringify(this.getInitalFormData())
-      );
-    },
-    results() {
-      return calculateResults(this.formData);
-    },
-    selectedBaseFoods() {
-      return this.formData.food.filter((food) => food.type === 'base');
-    },
-    selectedExtraFoods() {
-      return this.formData.food.filter((food) => food.type === 'extra');
-    },
-  },
-  created() {
-    // Get the usage count from local storage
-    this.usageCount = useStorage('usage-count', 0);
-  },
-  methods: {
-    filterFood(foodType) {
-      return food.filter((food) => {
-        if (this.isUserVege) {
-          return (
-            food.type === foodType && food.isVegeFriendly === this.isUserVege
-          );
-        }
-        return food.type === foodType;
-      });
-    },
-    getInitalFormData() {
-      return {
-        numberOfAdults: 0,
-        numberOfChildren: 0,
-        food: [],
-        capacity: 1,
-      };
-    },
-    removeVegeSelectedItems() {
-      this.formData = {
-        ...this.formData,
-        food: this.formData.food.filter(
-          (food) => food.isVegeFriendly === this.isUserVege
-        ),
-      };
-    },
-    submit() {
-      this.state = states.LOADING_RESULTS;
-      this.usageCount.value += 1;
+const usageCount = useStorage('usage-count', 0)
+const isUserVege = ref(false)
+const state = ref(states.INITIAL)
+const statesEnum = states
 
-      // Wait and display the result
-      setTimeout(() => {
-        this.state = states.DISPLAY_RESULTS;
-      }, getLoadingTimes({ usageCount: this.usageCount.value }));
-    },
-    clear() {
-      this.formData = this.getInitalFormData();
-      this.state = states.INITIAL;
-    },
-    updateForm(formProperty, value) {
-      this.formData[formProperty] = value;
-    },
-    clickItem(item) {
-      const indexOfItem = this.formData.food.indexOf(item);
-      if (indexOfItem < 0) {
-        this.formData.food.push(item);
-      } else {
-        this.formData.food.splice(indexOfItem, 1);
-      }
-    },
-  },
-};
+function getInitialFormData() {
+  return {
+    numberOfAdults: 0,
+    numberOfChildren: 0,
+    food: [],
+    capacity: 1,
+  }
+}
+
+const formData = ref(getInitialFormData())
+
+const submitButtonDisabled = computed(() => {
+  return !(
+    (formData.value.numberOfAdults > 0 ||
+      formData.value.numberOfChildren > 0) &&
+    formData.value.food.length > 0
+  )
+})
+
+const clearButtonDisabled = computed(() => {
+  return (
+    JSON.stringify(formData.value) ===
+    JSON.stringify(getInitialFormData())
+  )
+})
+
+const results = computed(() => {
+  return calculateResults(formData.value)
+})
+
+const selectedBaseFoods = computed(() => {
+  return formData.value.food.filter((f) => f.type === 'base')
+})
+
+const selectedExtraFoods = computed(() => {
+  return formData.value.food.filter((f) => f.type === 'extra')
+})
+
+function filterFood(foodType) {
+  return food.filter((f) => {
+    if (isUserVege.value) {
+      return f.type === foodType && f.isVegeFriendly === isUserVege.value
+    }
+    return f.type === foodType
+  })
+}
+
+function removeVegeSelectedItems() {
+  formData.value = {
+    ...formData.value,
+    food: formData.value.food.filter(
+      (f) => f.isVegeFriendly === isUserVege.value
+    ),
+  }
+}
+
+function submit() {
+  state.value = states.LOADING_RESULTS
+  usageCount.value += 1
+
+  setTimeout(() => {
+    state.value = states.DISPLAY_RESULTS
+  }, getLoadingTimes({ usageCount: usageCount.value }))
+}
+
+function clear() {
+  formData.value = getInitialFormData()
+  state.value = states.INITIAL
+}
+
+function updateForm(formProperty, value) {
+  formData.value[formProperty] = value
+}
+
+function clickItem(item) {
+  const indexOfItem = formData.value.food.indexOf(item)
+  if (indexOfItem < 0) {
+    formData.value.food.push(item)
+  } else {
+    formData.value.food.splice(indexOfItem, 1)
+  }
+}
 </script>
 
 <style scoped>
